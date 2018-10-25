@@ -13,8 +13,12 @@ import nachbarstromLogo from "../logo.png";
 
 export const Results = props => {
   const handleOnMarkerComplete = (event) => {};
+  const mapDivStyle = {
+    height: props.userWindowHeight,
+    width: props.userWindowWidth
+  };
   const map = (
-    <div className="map-render-div" style={{height: props.userWindowHeight, width: props.userWindowWidth}}>
+    <div className="map-render-div" style={mapDivStyle}>
       <Map
         onMarkerComplete={handleOnMarkerComplete}
         geoJson={null}
@@ -84,7 +88,6 @@ export const Results = props => {
           <button className="results-button">Start Finance Calculator</button>
         </Link>
       </div>
-
     </div>
-    )
-  };
+  )
+};
