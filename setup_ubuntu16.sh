@@ -10,7 +10,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install yarn
 
 # Setup the projects dependencies and build the project
-yarn .
+yarn
 yarn run build
 yarn global add serve
 echo "export PATH=$(yarn global bin):\$PATH" >> ~/.bashrc
