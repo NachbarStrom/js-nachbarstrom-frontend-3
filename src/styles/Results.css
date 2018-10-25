@@ -1,0 +1,204 @@
+.approved {
+    padding-bottom: 8px;
+    padding-top: 15px;
+}
+.results {
+    height: 700px;
+}
+.results-rec {
+    height: 260px;
+    margin-bottom: 32px;
+  }
+
+  .Rectangle-12 {
+    padding: 40px 0px 34px 0px;
+    width: 456px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 1px #5371f8;
+  }
+
+.Group-3 {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .Congrats-Your-prope {
+    object-fit: contain;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b53ff;
+    display: inline-block;
+    padding-left: 16px;
+  }
+
+  .Line-2 {
+    width: 2px;
+    height: 196px;
+    border: solid 1px #aeaeae;
+    position: absolute;
+    top: 274px;
+    left: 262px;
+  }
+
+  .left-right {
+    width: 50%;
+    text-align: center;
+  }
+
+  .right {
+      padding-left: 227px;
+  }
+
+  .Usable-Roof-Area {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    color: #757575;
+  }
+
+  .electricity-from-usable {
+      width: 200px;
+      padding-left: 24px;
+      position: absolute;
+      right: 56px;
+      top: 274px;
+  }
+
+  .solar-panel-2 {
+    width: 50px;
+    height: 46px;
+    object-fit: contain;
+    opacity: 0.9;
+    padding: 0px;
+    position: absolute;
+    top: 351px; 
+    left: 59px;
+  }
+
+  .group-5 {
+    position: absolute;
+    left: 129px;
+    top: 338px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .group-6 {
+      padding-top: 32px;
+  }
+
+  .sqm {
+    display: inline;
+    width: 106px;
+    height: 32px;
+    font-family: Roboto;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+
+  .text-style {
+    font-size: 16px;
+    color: #4a4a4a;
+  }
+
+  .text-style-1 {
+    font-size: 30px;
+    color: #4649fa;
+  }
+
+  .sqm-right {
+      width: 200px;
+      position: absolute;
+      left: 310px;
+      top: 357px;
+  }
+
+  .small-info {
+    object-fit: contain;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    color: #757575;
+    padding-top: 5px;
+  }
+
+  .edit-roof-area {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #0167ff;
+    text-decoration: underline;
+    position: absolute;
+    top: 448px;
+    left: 101px;
+  }
+
+  .edit-roof-area:hover {
+    cursor: pointer;
+  }
+  .sun-results {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    position: absolute;
+    left: 286px;
+    top: 350px;
+  }
+
+  .Great-To-find-out {
+    object-fit: contain;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4649fa;
+    
+  }
+
+  .great {
+      padding-bottom: 32px;
+  }
+
+  .results-button {
+    background-color: #4B53FF;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.25);
+    width: 213px;
+    height: 40px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 32px;
+    right: 154px;
+  }

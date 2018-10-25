@@ -1,0 +1,307 @@
+.financial-rectangle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 725px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.24);
+    border: solid 1px #9b9b9b;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 24px 32px;
+    text-align: left;
+  }
+
+  .Group-9 {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+
+  .number-two {
+    object-fit: contain;
+    width: 13px;
+    height: 18px;
+    position: relative;
+    left: -24px;
+  }
+
+  .FINANCIAL-PLAN {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #6770ff;
+  }
+
+  .Line-3 {
+    margin-top: 16px;
+    height: 0px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #cbcbcb;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .next-button {
+      position: absolute;
+      bottom: 24px;
+      right: 32px;
+    width: 88px;
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    background-color: #5371f8;
+    font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  }
+
+  .back-button {
+    position: absolute;
+    bottom: 24px;
+    left: 32px;
+    width: 88px;
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.09);
+    border: solid 1px #5371f8;
+    font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #5371f8;
+  }
+
+  .personalize-your-sol {
+    display: inline;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    margin-left: 10px;
+    color: #4B53FF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: left;
+  }
+
+  .oval-2 {
+    display: inline;
+    position: absolute;
+    top: 87px;
+    left: 573px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .your-financial-est {
+    position: absolute;
+    top: 87px;
+    left: 605px;
+    display: inline;
+    margin-bottom: 16px;
+    color: #4B53FF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: left;
+  }
+
+  .rectangle-11 {
+      position: absolute;
+      top: 127px;
+      left: 32px;
+    background-color: #FFFFFF;
+    border: 1px solid #4B53FF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    width: 500px;
+    height: 516px;
+  }
+
+  .rectangle-12 {
+    position: absolute;
+    top: 127px;
+    left: 564px;
+  background-color: #FFFFFF;
+  border: 1px solid #4B53FF;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 500px;
+  height: 516px;
+}
+.sliders {
+  width: 300px;
+  position: absolute;
+  top: 85px;
+  left: 69px;
+}
+
+.sliders-2 {
+  width: 300px;
+  position: absolute;
+  top: 258px;
+  left: 69px;
+}
+.questions {
+  color: #4A4A4A;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: left;
+}
+
+.yearly-consumption {
+  margin-top: 16px;
+  margin-left: 24px;
+}
+
+.panel-systems {
+  position: absolute;
+  top: 190px;
+  left: 24px;
+}
+
+.battery {
+  position: absolute;
+  top: 352px;
+  left: 24px;
+}
+
+.explanation-1 {
+  display: inline-block;
+  width: 20px;
+  position: absolute;
+  top: 19px;
+  left: 385px;
+}
+
+.explanation-2 {
+  display: inline-block;
+  width: 20px;
+  position: absolute;
+  top: 193px;
+  left: 434px;
+}
+
+.explanation-3 {
+  display: inline-block;
+  width: 20px;
+  position: absolute;
+  top: 355px;
+  left: 280px;
+}
+
+.battery-selector {
+  color: #dfdfdf;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  height: 88px;
+  border-radius: 6px;
+  border: solid 1px #dfdfdf;
+  background-color: #ffffff;
+  padding-bottom: 10px;
+}
+
+.battery-selector:hover {
+  border: solid 1.5px #3c3de5;
+  background-color: rgba(60, 61, 229, 0.08);
+  color: #3c3de5;
+}
+
+.battery-selector-active {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  height: 88px;
+  border-radius: 6px;
+  border: solid 1.5px #3c3de5;
+  background-color: rgba(60, 61, 229, 0.08);
+  color: #3c3de5;
+}
+
+.with-battery {
+  position: absolute;
+  bottom: 36px;
+  width: 140px;
+left: 32px;
+}
+
+.no-battery {
+  position: absolute;
+  width: 140px;
+  bottom: 36px;
+  left: 188px;
+}
+.battery-selector-text {
+  margin: auto;
+  margin-top: -5px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #dfdfdf;
+}
+
+.no-battery-line {
+  width: 50px;
+}
+
+.chart-separator {
+  position: absolute;
+  top: 119px;
+  left: 0px;
+  border: 1px solid #DFDFDF;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.07999999821186066);
+  width: 503px;
+  height: 2px;
+}
+
+.your-financial-cost {
+  position: absolute;
+  top: 135px;
+  left: 30px;
+  color: #4A4A4A;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  width: 243px;
+  text-align: left;
+}
+
+.chart-div {
+  position: absolute;
+  top: 179px;
+  width: 490px;
+  height: 400px;
+}

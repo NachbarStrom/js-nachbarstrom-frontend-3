@@ -1,0 +1,432 @@
+.Rectangle-15 {
+    padding-left: 32px;
+    margin-top: 17px;
+    width: 496px;
+    height: 527px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px #4b53ff;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .summary-rectangle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 700px;
+    opacity: 0.95;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.24);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 24px 32px;
+    text-align: left;
+}
+
+.Your-Property {
+    margin-top: 18px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+
+  .Overall-text {
+    position: absolute;
+    top: 316px;
+    left: 72px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+
+  .address-line {
+    position: absolute;
+    top: 170px;
+    left: 93px;
+  }
+  .pin {
+    width: 12px;
+    height: 16px;
+    object-fit: contain;
+    display:inline;
+  }
+
+  .address-text {
+    margin-left: 9px;
+    display: inline;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5371f8;
+  }
+
+  .map-images {
+      position: absolute;
+      top: 157px;
+      left: 72px;
+  }
+  .satelite {
+      display: inline;
+      margin: 0px;
+    width: 123px;
+    height: 111px;
+  }
+
+  .map-normal {
+    display: inline;
+    width: 300px;
+    height: 109px;
+  }
+
+  .Line-5 {
+      position: absolute;
+      top: 292px;
+      left: 32px;
+    width: 495px;
+    height: 2px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.09);
+    border: solid 1px rgba(75, 83, 255, 0.5);
+  }
+
+  .Lorem-ipsum {
+    position: absolute;
+    top: 340px;
+    left: 72px;
+    width: 432px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #757575;
+  }
+
+  .System-Size {
+    position: absolute;
+    top: 408px;
+    left: 72px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+
+  .summary-tiny-title {
+    margin-bottom: 10px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+
+  .margin-five {
+    margin-top: 10px;
+  }
+
+  .summary-system-size {
+    position: absolute;
+    top: 400px;
+    left: 72px;
+  }
+
+  .summary-system-size-small {
+    position: absolute;
+    top: 468px;
+    left: 72px;
+  }
+
+  .summary-installation-cost {
+    position: absolute;
+    top: 508px;
+    left: 72px;
+  }
+
+  .summary-solar-electricity {
+    position: absolute;
+    top: 408px;
+    left: 334px;
+  }
+
+  .summary-twenty-years {
+    position: absolute;
+    top: 508px;
+    left: 334px;
+  }
+
+  .summary-numbers {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b53ff;
+    display: inline;
+  }
+
+  .kwp {
+      margin-left: 10px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b53ff; 
+  }
+
+  .inline-element {
+      display: inline;
+  }
+
+  .plus-symbol {
+      margin-left: 16px;
+  }
+
+  .summary-battery {
+    color: #4b53ff; 
+    margin-left: 16px;
+    position: relative;
+    top: 15px;
+  }
+
+  .panels-number {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #757575;
+    display: inline;
+  }
+
+  .panels-number-average {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #757575;
+  }
+
+  .battery-power {
+      display: inline;
+      margin-left: 45px;
+  }
+
+  .ninety-percent-image {
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    top: 97px;
+    left: 576px;
+    text-align: center;
+  }
+
+  .center-element {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -60%);
+  }
+
+  .ninety {
+    display: inline;
+    color: #4B53FF;
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 700;
+  }
+
+  .percentage {
+    display: inline;
+    color: #4B53FF;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 700;
+  }
+  .energy-inc {
+    color: #4B53FF;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: -10px;
+  }
+
+  .first-check {
+    position: absolute;
+    top: 95px;
+    left: 698px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: left;
+  }
+
+  .checked-approved {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .text-grey {
+    display: inline;
+    color: #4A4A4A;
+  }
+
+  .text-blue {
+    display: inline;
+    color: #4B53FF;
+  }
+
+  .second-check {
+    position: absolute;
+    top: 135px;
+    left: 698px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: left;
+  }
+
+  .third-check {
+    position: absolute;
+    top: 173px;
+    left: 698px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: left;
+  }
+
+  .line-3-copy-2 {
+    border: 1px solid #CBCBCB;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10000000149011612);
+    width: 492px;
+    height: 2px;
+    position: absolute;
+    top: 239px;
+    left: 568px;
+  }
+
+  .line-3-copy-3 {
+    border: 1px solid #CBCBCB;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10000000149011612);
+    width: 492px;
+    height: 2px;
+    position: absolute;
+    top: 615px;
+    left: 568px;
+  }
+
+  .submission-input {
+    background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  width: 456px;
+  height: 40px;
+  padding-left: 20px;
+  font-family: Roboto;
+  font-size: 12px;
+  }
+
+  .first-name {
+    position: absolute;
+    top: 366px;
+    left: 574px;
+  }
+
+  .last-name {
+    position: absolute;
+    top: 414px;
+    left: 574px;
+  }
+
+  .phone-name {
+    position: absolute;
+    top: 462px;
+    left: 574px;
+  }
+
+  .email-name {
+    position: absolute;
+    top: 510px;
+    left: 574px;
+  }
+
+  .agreement-checkbox {
+    position: absolute;
+    top: 566px;
+    left: 582px;
+    color: #757575;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.18px;
+    line-height: 14px;
+    width: 383px;
+    text-align: left;
+  }
+
+  .get-the-best-deal {
+    color: #4A4A4A;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    width: 451px;
+    text-align: left;
+    position: absolute;
+    top: 268px;
+    left: 576px;
+  }
+
+  .we-will-find {
+    color: #757575;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 18px;
+    width: 425px;
+    text-align: left;
+    position: absolute;
+    top: 308px;
+    left: 576px;
+  }

@@ -1,0 +1,140 @@
+.loading {
+    padding: 16px 32px;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.Line {
+    width: 447px;
+    height: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #cbcbcb;
+  }
+
+  .Group-9 {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .AI-SOLAR-CALCULATION {
+    display: inline;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #6770ff;
+    padding-left: 16px;
+  }
+
+  .header {
+      padding-bottom: 12px;
+  }
+
+  .Your-address {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+
+  .Rectangle-11 {
+    padding: 24px;
+    width: 456px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 1px #5371f8;
+  }
+
+  .loading-rec {
+    height: 344px;
+  }
+
+  .Analyzing-your-roof {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4b53ff;
+  }
+
+  .sun {
+    width: 50px;
+    height: 53.3px;
+    object-fit: contain;
+  }
+
+  .one {
+      opacity: 0.2;
+      position: absolute;
+      top: 377px;
+      left: 98px;
+  }
+
+  .two {
+    opacity: 0.4;
+    position: absolute;
+    top: 307px;
+    left: 150px;
+}
+
+.three {
+    opacity: 0.6;
+    position: absolute;
+    top: 281px;
+    left: 235px;
+}
+
+.four {
+    opacity: 0.8;
+    position: absolute;
+    top: 307px;
+    left: 320px;
+}
+
+.five {
+    opacity: 1;
+    position: absolute;
+    top: 377px;
+    left: 375px;
+}
+
+.solar-panel {
+    position: absolute;
+    top: 386px;
+    left: 191px;
+    width: 138px;
+    height: 115px;
+    object-fit: contain;
+}
+
+.NachbarStrom-is-doin {
+    object-fit: contain;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4b53ff;
+    padding-top: 54px;
+    padding-bottom: 77px;
+  }
