@@ -4,12 +4,19 @@ import { Link } from 'react-router-dom';
 
 
 
+
 //class Home extends Component {
 //  render() {
     const home = ( props ) => {  
+   
+
         let logoImage = require('../logo.png')
 return (
         <div>
+
+            <div className="background-map-image">
+            </div>
+
             <header>
           <img src={logoImage} className="logo" alt="Nachbarstrom" />
         </header>

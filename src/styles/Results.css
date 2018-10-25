@@ -1,3 +1,9 @@
+.maps-background {
+  background: #fff;
+  height: 400px;
+  width: 100%;
+}
+
 .approved {
     padding-bottom: 8px;
     padding-top: 15px;

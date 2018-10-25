@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import '../styles/Results.css';
 import '../styles/App.css';
 import '../styles/Loading.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Map } from './Map';
 
 const results = ( props ) => {  
+    const handleOnMarkerComplete = (event) => {
+    };
+
+    
+
     let checkApproved = require('../images/group-3.png')
     let firstStep = require('../images/group-9.png')
     let solarPanel = require('../images/solar-panel-2.png')
@@ -12,9 +18,18 @@ const results = ( props ) => {
     let logoImage = require('../logo.png')
     return (
         <div>
-      <header>
-          <img src={logoImage} className="logo" alt="Nachbarstrom" />
-        </header>
+      
+
+        <div className="map-render-div" style={{height: props.userWindowHeight, width: props.userWindowWidth}}>
+          <Map
+              onMarkerComplete={handleOnMarkerComplete}
+              geoJson={null}
+            />
+          
+    
+            </div>
+
+<img src={logoImage} className="logo" alt="Nachbarstrom" />
         <div className="rectangle loading results">
         
         <div className="header">

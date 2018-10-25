@@ -3,15 +3,39 @@
   padding: 40px;
 }
 
+.background-map-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url(./background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+
 .no-display {
   visibility: hidden;
+}
+
+.map-render-div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.blur-bg {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .logo {
   width: 133px;
   height: 54px;
-  position: relative;
-  float: left;
+  position: absolute;
+  left: 40px;
 }
 
 /******STARTING PAGE******/

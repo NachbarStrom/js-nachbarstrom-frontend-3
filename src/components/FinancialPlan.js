@@ -9,13 +9,16 @@ import ReactTooltip from 'react-tooltip';
 import { TiBatteryCharge } from 'react-icons/ti';
 import '../styles/Graphs.css';
 import {Line} from 'react-chartjs-2';
+import { Map } from './Map';
+import '../styles/App.css';
 
 const financial = ( props ) => {  
+  const handleOnMarkerComplete = (event) => {
+  };
 
   const data = {
     labels: ['1', '5', '10', '15', '20', '20', '25'],
     datasets: [
-      {fill: '-2'},
       {
         label: 'With Solar',
         fill: false,
@@ -99,6 +102,12 @@ const financial = ( props ) => {
     let numberTwo = require('../images/number2.png')
     let checkedApproved = require('../images/group-3.png')
     return (
+<div>
+
+<div className="background-map-image blur-bg">
+            </div>
+
+
         <div className="financial-rectangle">
         <img src={secondStep} className="Group-9" />
         <img src={numberTwo} className="number-two" />
@@ -113,8 +122,8 @@ const financial = ( props ) => {
 
         <div className="rectangle-11">
         <div className="questions yearly-consumption">What is your yearly electricity consumption? </div>
-        <div className="explanation-1" data-tip="Some sort of explanation here"><FaQuestionCircle size={16} color="#757575" /></div>
-        <ReactTooltip place="top" type="dark" effect="float" />
+        <div className="explanation-1" data-tip="To recommend the best solar system for your home <br /> we need to understand how much energy you use."><FaQuestionCircle size={16} color="#757575" /></div>
+        <ReactTooltip place="top" type="dark" effect="float" multiline="true" />
 
         <div className="sliders">
         <InputRange
@@ -124,14 +133,14 @@ const financial = ( props ) => {
         onChange={props.consumptionChange} />
         </div>
 
-        <div className="questions panel-systems">How much solar panel system you want to install?</div>
-        <div className="explanation-2" data-tip="Some sort of explanation here"><FaQuestionCircle size={16} color="#757575" /></div>
+        <div className="questions panel-systems">How much solar power do you want to install?</div>
+        <div className="explanation-2" data-tip="You can adjust your solar system size <br /> to estimate the cost and  the savings."><FaQuestionCircle size={16} color="#757575" /></div>
         <div className="sliders-2">
         <SliderCapacity capacity={props.capacity} panels={props.panels} capacityChange={props.capacityChange} />
         </div>
 
         <div className="questions battery">Do you want a storage battery?</div>
-        <div className="explanation-3" data-tip="Some sort of explanation here"><FaQuestionCircle size={16} color="#757575" /></div>
+        <div className="explanation-3" data-tip="With a battery, you can store electricity produced during the <br />  day and save unused electricity to consume it at night <br /> when your solar system is not generating energy. This will <br /> determine how much the energy independence you will be. "><FaQuestionCircle size={16} color="#757575" /></div>
 
         <div className="with-battery"><div className={props.btnClass} onClick={props.batteryActivationHandler}><div><TiBatteryCharge size={60} /></div>With battery</div></div>
         <div className="no-battery"><div className={props.noBtnClass} onClick={props.noBatteryActivationHandler}><div><TiBatteryCharge size={60} /></div>No battery</div></div>
@@ -182,6 +191,7 @@ const financial = ( props ) => {
 
         <Link to='/results'><button className="back-button">Back</button></Link>
         <Link to='/summary'><button className="next-button">Next</button></Link>
+      </div>
       </div>
     )
   };

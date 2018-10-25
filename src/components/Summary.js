@@ -3,6 +3,7 @@ import '../styles/FinancialPlan.css';
 import { Link } from 'react-router-dom';
 import { TiBatteryCharge } from 'react-icons/ti';
 import '../styles/Summary.css';
+import '../styles/App.css';
 
 
 const summary = ( props ) => {  
@@ -13,8 +14,11 @@ const summary = ( props ) => {
     let pin = require('../images/pin.png')
     let mapSatelite = require('../images/screen-shot.png')
     let map = require('../images/screen-map.png')
-    return (
+    return (<div>
+      <div className="background-map-image blur-bg">
+            </div>
         <div className="summary-rectangle">
+        
         <img src={thirdStep} className="Group-9" />
         <img src={numberThree} className="number-two" />
         <div className="FINANCIAL-PLAN">YOUR SOLAR SUMMARY & CONTACT</div>
@@ -119,6 +123,7 @@ const summary = ( props ) => {
 
         <Link to='/financial'><button className="back-button">Back</button></Link>
         <Link to='/done'><button className="next-button">Submit</button></Link>
+      </div>
       </div>
     )
   };

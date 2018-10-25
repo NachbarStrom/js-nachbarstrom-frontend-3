@@ -17,7 +17,7 @@
 .awesome {
   font-family: Roboto;
   font-size: 34px;
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.35;
@@ -43,7 +43,7 @@
     margin: auto;
     margin-top: 48px;
     width: 910px;
-    height: 307px;
+    height: 299px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
@@ -179,14 +179,18 @@
   .next-steps-blue {
     position: absolute;
     top: 466px;
-    left: 114px;
-    color: #4B53FF;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    width: 201px;
-    text-align: center;
+    left: 146px;
+    width: 138px;
+  height: 32px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4b53ff;
   }
 
   .next-steps-title-advice {
@@ -205,13 +209,18 @@
   .next-steps-advice {
     position: absolute;
     top: 464px;
-    left: 348px;
+    left: 365px;
     color: #757575;
+    width: 138px;
+  height: 32px;
     font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    width: 172px;
+    font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 12px;
     text-align: center;
   }
 
@@ -231,14 +240,18 @@
   .next-steps-on-site {
     position: absolute;
     top: 464px;
-    left: 554px;
-    color: #757575;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    width: 201px;
-    text-align: center;
+    left: 595px;
+    width: 120px;
+  height: 16px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #757575;
   }
 
   .next-steps-title-installation {
@@ -257,14 +270,18 @@
   .next-steps-installation {
     position: absolute;
     top: 464px;
-    left: 780px;
-    color: #757575;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    width: 201px;
-    text-align: center;
+    left: 809px;
+    width: 131px;
+  height: 16px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #757575;
   }
 
   .call-button {

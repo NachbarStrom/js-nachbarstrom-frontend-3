@@ -3,6 +3,7 @@ import '../styles/FinancialPlan.css';
 import { Link } from 'react-router-dom';
 import '../styles/Thanks.css';
 import { MdChat } from 'react-icons/md';
+import '../styles/App.css';
 
 const done = ( props ) => {  
     let calculate = require('../images/calculate.png')
@@ -12,6 +13,9 @@ const done = ( props ) => {
     let phoneImage = require('../images/phone.png')
     let emailImage = require('../images/email.png')
     return (
+      <div>
+        <div className="background-map-image blur-bg">
+            </div>
         <div className="done-rectangle">
        <div className="awesome">Awesome!</div>
        <div className="awesome">You are on your way to become energy independent.</div>
@@ -19,7 +23,7 @@ const done = ( props ) => {
       
       <div className="Rectangle-20">
       
-      <div className="continue">And so it goes on your now:</div>
+      <div className="continue">And so it goes from now:</div>
       
       <div className="up-to">up to 1 day</div>
       <div className="two-weeks">2 weeks</div>
@@ -52,6 +56,8 @@ const done = ( props ) => {
       </div>
       
       </div>
+      </div>
+    
     )
   };
  

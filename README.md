@@ -27,7 +27,7 @@ bash ./setup_ubuntu16.sh
   production build at any time:
 
 ```bash
-yarn run build
+yarn build
 ```
 
 * To run attached to the command line:

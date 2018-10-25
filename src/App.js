@@ -7,9 +7,13 @@ import Results from './components/Results';
 import Financial from './components/FinancialPlan';
 import Summary from './components/Summary';
 import Done from './components/Thanks';
+import { Map } from './components/Map';
 
 class App extends Component {
   state = {
+    userWindowHeight: '100px',
+    userWindowWidth: '100px',
+    geoJson: null,
     address: 'Lichtenbergstraße 6, Garching',
     roofArea: '30',
     panels: '30',
@@ -23,17 +27,17 @@ class App extends Component {
     phone: '',
     email: '',
     batteryButtonActive: false,
-    noBatteryButtonActive: false,
-    data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
-      datasets: [{
-      label: "My First dataset",
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
-      }]
+    noBatteryButtonActive: false
       }
-  }
+  
+
+
+  componentWillMount() {
+    this.setState({
+      userWindowHeight: window.innerHeight + 'px',
+      userWindowWidth: window.innerWidth + 'px',
+    });
+    };
 
   batteryButtonHandler = (event) => {
     this.setState( {
@@ -67,11 +71,13 @@ class App extends Component {
     let noBtnClass = this.state.noBatteryButtonActive ? "battery-selector-active" : "battery-selector"
     return (
       <div className="App">
+          
+            
         
         <Switch>
         <Route exact path="/" render={(props) => ( <Home addressInput={this.addressChangerHandler} /> )}/>
         <Route path="/loading" render={(props) => ( <Loading address={this.state.address} /> )} />
-        <Route path="/results" render={(props) => ( <Results address={this.state.address} roofArea={this.state.roofArea} panels={this.state.panels} capacity={this.state.capacity} electricity={this.state.electricity} /> )}/>
+        <Route path="/results" render={(props) => ( <Results userWindowHeight={this.state.userWindowHeight} userWindowWidth={this.state.userWindowWidth} address={this.state.address} roofArea={this.state.roofArea} panels={this.state.panels} capacity={this.state.capacity} electricity={this.state.electricity} /> )}/>
         <Route path="/financial" render={(props) => ( <Financial data={this.state.data} btnClass={btnClass} noBtnClass={noBtnClass} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />)}/>
         <Route path="/summary" render={(props) => ( <Summary address={this.state.address} panels={this.state.panels} batteryPower={this.state.batteryPower} /> )} />
         <Route path="/done" render={(props) => ( <Done /> )} />
@@ -82,7 +88,7 @@ class App extends Component {
 
     );
   }
-  }
+}
 
 export default App;
 
