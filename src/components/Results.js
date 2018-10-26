@@ -13,12 +13,8 @@ import nachbarstromLogo from "../logo.png";
 
 export const Results = props => {
   const handleOnMarkerComplete = (event) => {};
-  const mapDivStyle = {
-    height: props.userWindowHeight,
-    width: props.userWindowWidth
-  };
   const map = (
-    <div className="map-render-div" style={mapDivStyle}>
+    <div className="map-render-div">
       <Map
         onMarkerComplete={handleOnMarkerComplete}
         geoJson={null}
