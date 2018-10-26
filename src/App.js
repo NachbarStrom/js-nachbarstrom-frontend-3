@@ -4,10 +4,9 @@ import { Switch, Route } from 'react-router-dom'
 import Home from "./components/Home";
 import Loading from './components/Loading';
 import { Results } from './components/Results';
-import Financial from './components/FinancialPlan';
+import { Financial } from './components/FinancialPlan/FinancialPlan';
 import Summary from './components/Summary';
 import Done from './components/Thanks';
-import { Map } from './components/Map';
 
 class App extends Component {
   state = {
