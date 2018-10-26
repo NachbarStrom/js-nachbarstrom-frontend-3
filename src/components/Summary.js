@@ -10,7 +10,7 @@ const summary = ( props ) => {
     let thirdStep = require('../images/step3.png')
     let numberThree = require('../images/number3.png')
     let secondStep = require('../images/step2.png')
-    let checkedApproved = require('../images/group-3.png')
+    let checkedApproved = require('../images/tick.png')
     let pin = require('../images/pin.png')
     let mapSatelite = require('../images/screen-shot.png')
     let map = require('../images/screen-map.png')

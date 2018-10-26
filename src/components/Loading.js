@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import '../styles/App.css';
 import '../styles/Loading.css';
 import { Link } from 'react-router-dom'
 
-const loading = ( props ) => {  
-    let firstStep = require('../images/group-9.png')
-    let loadingSun = require('../images/sun-1.png')
-    let solarPanel = require('../images/solar-panel.png')
-    let logoImage = require('../logo.png')
+import firstStep from "../images/step1.png";
+import loadingSun from "../images/sun-gray.png";
+import solarPanel from "../images/house-with-panel.png";
+import logoImage from "../logo.png";
+
+const loading = props => {
     return (
       <div>
          <div className="background-map-image">

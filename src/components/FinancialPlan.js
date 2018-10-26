@@ -100,7 +100,7 @@ const financial = ( props ) => {
     
     let secondStep = require('../images/step2.png')
     let numberTwo = require('../images/number2.png')
-    let checkedApproved = require('../images/group-3.png')
+    let checkedApproved = require('../images/tick.png')
     return (
 <div>
 

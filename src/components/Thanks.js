@@ -6,7 +6,7 @@ import { MdChat } from 'react-icons/md';
 import '../styles/App.css';
 
 const done = ( props ) => {  
-    let calculate = require('../images/calculate.png')
+    let calculate = require('../images/tick.png')
     let advice = require('../images/advice.png')
     let onSite = require('../images/on-site.png')
     let installation = require('../images/installation.png')
