@@ -12,11 +12,10 @@ import solarPanelIcon from "../images/solar-panel.png";
 import nachbarstromLogo from "../images/nachbarstrom-logo.png";
 
 export const Results = props => {
-  const handleOnMarkerComplete = (event) => {};
   const map = (
     <div className="map-render-div">
       <Map
-        onMarkerComplete={handleOnMarkerComplete}
+        onMarkerComplete={e => {}}
         geoJson={null}
       />
     </div>);
