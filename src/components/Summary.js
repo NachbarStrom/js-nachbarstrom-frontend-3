@@ -90,15 +90,24 @@ const summary = ( props ) => {
             </div></div>
 
           <div className="first-check">
-          <img src={checkedApproved} className="checked-approved" /><div className="text-grey">Your property is </div><div className="text-blue">solar friendly</div>
+          <img src={checkedApproved} className="checked-approved" />
+              <div className="text-grey">Congrats! Your property is </div>
+              <div className="text-blue">solar friendly</div>
+              <div className="text-grey">. </div>
           </div>
 
           <div className="second-check">
-          <img src={checkedApproved} className="checked-approved" /><div className="text-grey">We found </div><div className="text-blue">6 certified installers </div><div className="text-grey">in your region</div>
+          <img src={checkedApproved} className="checked-approved" />
+              <div className="text-grey">You will be  </div>
+              <div className="text-blue">80% energy independent</div>
+              <div className="text-grey">!  </div>
           </div>
 
           <div className="third-check">
-          <img src={checkedApproved} className="checked-approved" /><div className="text-grey">XXX</div><div className="text-blue"> XXXXXXXXXXXXXXXXXXXXXX </div>
+          <img src={checkedApproved} className="checked-approved" />
+              <div className="text-grey">We found</div>
+              <div className="text-blue"> 6 certified installers </div>
+              <div className="text-grey">in your region.</div>
           </div>
 
           <div className="line-3-copy-2"></div>
