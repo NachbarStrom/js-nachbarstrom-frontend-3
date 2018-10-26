@@ -113,7 +113,10 @@ const summary = ( props ) => {
           <p><input type="text" className="submission-input email-name" name="emailName" placeholder="Email*" /></p>
         
           
-          <div className="agreement-checkbox"><input type="checkbox" className="rectangle-checkbox" /> By clicking this button, you agree to <a href="http://google.com"><u>terms and conditions.</u></a> </div>
+          <div className="agreement-checkbox">
+              <input type="checkbox" className="rectangle-checkbox" />
+              By clicking this button, you agree to the processing of my data on this form as described in the NachbarStrom <a href="http://google.com">Privacy</a>.
+          </div>
           <div className="we-will-find">NachbarStrom's AI can find the best retailer's offer for you based on the system you just configured.</div>
         </div>
 
