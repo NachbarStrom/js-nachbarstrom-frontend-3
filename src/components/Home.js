@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
     const home = ( props ) => {  
    
 
-        let logoImage = require('../logo.png')
+        let logoImage = require('../images/nachbarstrom-logo.png')
 return (
         <div>
 

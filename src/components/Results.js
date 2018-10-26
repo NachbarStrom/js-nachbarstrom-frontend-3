@@ -9,7 +9,7 @@ import tickIcon from "../images/tick.png";
 import stepOneIcon from "../images/step1.png";
 import sunIcon from "../images/sun.png";
 import solarPanelIcon from "../images/solar-panel.png";
-import nachbarstromLogo from "../logo.png";
+import nachbarstromLogo from "../images/nachbarstrom-logo.png";
 
 export const Results = props => {
   const handleOnMarkerComplete = (event) => {};

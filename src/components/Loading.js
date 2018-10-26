@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import firstStep from "../images/step1.png";
 import loadingSun from "../images/sun-gray.png";
 import solarPanel from "../images/house-with-panel.png";
-import logoImage from "../logo.png";
+import logoImage from "../images/nachbarstrom-logo.png";
 
 const loading = props => {
     return (
