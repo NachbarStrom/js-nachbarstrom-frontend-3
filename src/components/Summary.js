@@ -41,7 +41,7 @@ const summary = ( props ) => {
         <div className="Line-5"></div>
 
         <div className="Overall-text">Overall</div>
-        <div className="Lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </div>
+        <div className="Lorem-ipsum">iusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </div>
 
 
         <div className="System-Size">System Size</div>
