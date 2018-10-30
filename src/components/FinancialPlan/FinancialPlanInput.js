@@ -13,7 +13,7 @@ export const FinancialPlanInput = props => {
   return (
   <div className="rectangle-11">
     <div className="questions yearly-consumption">
-      What is your yearly electricity consumption? {String(props.calculationWithBattery)}
+      What is your yearly electricity consumption?
     </div>
     <div className="explanation-1"
          data-tip="To recommend the best solar system for your home <br /> we need to understand how much energy you use.">
