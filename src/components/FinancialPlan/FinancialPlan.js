@@ -10,8 +10,18 @@ import numberTwoIcon from "../../images/number2.png";
 import checkedApproved from "../../images/tick.png";
 import { FinancialPlanInput } from "./FinancialPlanInput";
 import { Diagram } from "./Diagram";
+import { Map } from "../Map";
 
 export const Financial = props => {
+  const map = (
+    <div className="map-render-div">
+      <Map
+        onMarkerComplete={e => {}}
+        geoJson={null}
+     />
+   </div>
+  );
+
   const header = (
     <div>
       <img src={secondStepIcon} className="Group-9" alt="Second step icon"/>
@@ -29,8 +39,11 @@ export const Financial = props => {
       btnClass={props.btnClass}
       noBtnClass={props.noBtnClass}
       noBatteryActivationHandler={props.noBatteryActivationHandler}
-  />);
+    />
+  );
+
   const diagram = <Diagram />;
+
   const coloredButtons = (
     <div>
       <button className="graph-pink-box">
@@ -59,7 +72,7 @@ export const Financial = props => {
 
   return (
     <div>
-      <div className="background-map-image blur-bg"/>
+      {map}
       <div className="financial-rectangle">
         {header}
         <div className="Line-3"/>
