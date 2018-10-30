@@ -3,20 +3,12 @@ import '../styles/App.css';
 import '../styles/Loading.css';
 import { Link } from 'react-router-dom'
 
-import firstStep from "../images/step1.png";
+import firstStep from "../images/circle-1-third.png";
 import loadingSun from "../images/sun-gray.png";
 import solarPanel from "../images/house-with-panel.png";
 import logoImage from "../images/nachbarstrom-logo.png";
-import { Map } from "./Map";
 
-const loading = props => {
-  const map = (
-    <div className="map-render-div">
-      <Map
-        onMarkerComplete={e => {}}
-        geoJson={null}
-      />
-    </div>);
+export const Loading = props => {
   return (
     <div>
       <header>
@@ -45,7 +37,5 @@ const loading = props => {
         <Link to='/results'><button className="rectangle-button">Results</button></Link>
       </div>
     </div>
-    )
-  };
- 
-export default loading;
+  )
+};

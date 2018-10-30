@@ -5,23 +5,13 @@ import '../../styles/SliderStyle.css';
 import '../../styles/Graphs.css';
 import '../../styles/App.css';
 
-import secondStepIcon from "../../images/step2.png";
+import secondStepIcon from "../../images/circle-2-thirds.png";
 import numberTwoIcon from "../../images/number2.png";
 import checkedApproved from "../../images/tick.png";
 import { FinancialPlanInput } from "./FinancialPlanInput";
 import { Diagram } from "./Diagram";
-import { Map } from "../Map";
 
 export const Financial = props => {
-  const map = (
-    <div className="map-render-div">
-      <Map
-        onMarkerComplete={e => {}}
-        geoJson={null}
-     />
-   </div>
-  );
-
   const header = (
     <div>
       <img src={secondStepIcon} className="Group-9" alt="Second step icon"/>

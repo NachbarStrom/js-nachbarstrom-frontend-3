@@ -3,23 +3,14 @@ import '../styles/Results.css';
 import '../styles/App.css';
 import '../styles/Loading.css';
 import { Link } from 'react-router-dom';
-import { Map } from './Map';
 
 import tickIcon from "../images/tick.png";
-import stepOneIcon from "../images/step1.png";
+import stepOneIcon from "../images/circle-1-third.png";
 import sunIcon from "../images/sun.png";
 import solarPanelIcon from "../images/solar-panel.png";
 import nachbarstromLogo from "../images/nachbarstrom-logo.png";
 
 export const Results = props => {
-  const map = (
-    <div className="map-render-div">
-      <Map
-        onMarkerComplete={e => {}}
-        geoJson={null}
-      />
-    </div>);
-
   const header = (
     <div className="header">
       <img src={stepOneIcon} className="Group-9" alt="Step one icon" />
