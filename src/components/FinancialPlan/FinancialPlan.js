@@ -39,6 +39,8 @@ export const Financial = props => {
       btnClass={props.btnClass}
       noBtnClass={props.noBtnClass}
       noBatteryActivationHandler={props.noBatteryActivationHandler}
+      batteryActivationHandler={props.batteryActivationHandler}
+      calculationWithBattery={props.calculationWithBattery}
     />
   );
 
@@ -72,7 +74,6 @@ export const Financial = props => {
 
   return (
     <div>
-      {map}
       <div className="financial-rectangle">
         {header}
         <div className="Line-3"/>

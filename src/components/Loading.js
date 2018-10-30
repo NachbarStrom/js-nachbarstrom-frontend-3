@@ -19,7 +19,6 @@ const loading = props => {
     </div>);
   return (
     <div>
-      {map}
       <header>
         <img src={logoImage} className="logo" alt="Nachbarstrom" />
       </header>

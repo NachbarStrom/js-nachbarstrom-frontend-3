@@ -7,10 +7,13 @@ import React from "react";
 
 import '../../styles/FinancialPlan.css';
 
-export const FinancialPlanInput = props => (
+export const FinancialPlanInput = props => {
+  const batteryButtonClass = props.calculationWithBattery ? "battery-selector-active" : "battery-selector";
+  const noBatteryButtonClass = !props.calculationWithBattery ? "battery-selector-active" : "battery-selector";
+  return (
   <div className="rectangle-11">
     <div className="questions yearly-consumption">
-      What is your yearly electricity consumption?
+      What is your yearly electricity consumption? {String(props.calculationWithBattery)}
     </div>
     <div className="explanation-1"
          data-tip="To recommend the best solar system for your home <br /> we need to understand how much energy you use.">
@@ -51,18 +54,19 @@ export const FinancialPlanInput = props => (
       <FaQuestionCircle size={16} color="#757575"/></div>
 
     <div className="with-battery">
-      <div className={props.btnClass}
+      <div className={batteryButtonClass}
            onClick={props.batteryActivationHandler}>
         <div><TiBatteryCharge size={60}/></div>
         With battery
       </div>
     </div>
     <div className="no-battery">
-      <div className={props.noBtnClass}
+      <div className={noBatteryButtonClass}
            onClick={props.noBatteryActivationHandler}>
         <div><TiBatteryCharge size={60}/></div>
         No battery
       </div>
     </div>
   </div>
-);
+  )
+};

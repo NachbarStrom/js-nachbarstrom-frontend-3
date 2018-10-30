@@ -7,8 +7,9 @@ import { Results } from './components/Results';
 import { Financial } from './components/FinancialPlan/FinancialPlan';
 import Summary from './components/Summary';
 import Done from './components/Thanks';
+import { Map } from "./components/Map";
 
-class App extends Component {
+export class App extends Component {
   state = {
     userWindowHeight: '100px',
     userWindowWidth: '100px',
@@ -25,70 +26,58 @@ class App extends Component {
     lastName: '',
     phone: '',
     email: '',
-    batteryButtonActive: false,
-    noBatteryButtonActive: false
-      }
-  
-
+    calculationWithBattery: true,
+  };
 
   componentWillMount() {
     this.setState({
       userWindowHeight: window.innerHeight + 'px',
       userWindowWidth: window.innerWidth + 'px',
     });
-    };
+  };
 
   batteryButtonHandler = (event) => {
-    this.setState( {
-      batteryButtonActive: !this.state.batteryButtonActive
-    } )
-    this.state.noBatteryButtonActive ? this.setState({noBatteryButtonActive: false}) : this.setState({noBatteryButtonActive: false});
+    this.setState({ calculationWithBattery: true });
   };
 
   noBatteryButtonHandler = (event) => {
-    this.setState( {
-      noBatteryButtonActive: !this.state.noBatteryButtonActive
-    } )
-    this.state.batteryButtonActive ? this.setState({batteryButtonActive: false}) : this.setState({batteryButtonActive: false});
+    this.setState({ calculationWithBattery: false });
   };
 
   addressChangerHandler = (event) => {
-    this.setState( {
-      address: event.target.value
-    } )
+    this.setState({ address: event.target.value });
   };
 
   formSubmitHandler = (event) => {
-    this.setState( {
-      address: event.target.value
-    } )
+    this.setState({ address: event.target.value });
   };
 
+  withMapBackground = component => (
+    <div>
+      <div className="map-render-div">
+        <Map
+          onMarkerComplete={e => {}}
+          geoJson={null}
+        />
+      </div>
+      {component}
+    </div>
+  );
+
   render() {
-    
-    let btnClass = this.state.batteryButtonActive ? "battery-selector-active" : "battery-selector"
-    let noBtnClass = this.state.noBatteryButtonActive ? "battery-selector-active" : "battery-selector"
     return (
       <div className="App">
-          
-            
-        
         <Switch>
-        <Route exact path="/" render={(props) => ( <Home addressInput={this.addressChangerHandler} /> )}/>
-        <Route path="/loading" render={(props) => ( <Loading address={this.state.address} /> )} />
-        <Route path="/results" render={(props) => ( <Results userWindowHeight={this.state.userWindowHeight} userWindowWidth={this.state.userWindowWidth} address={this.state.address} roofArea={this.state.roofArea} panels={this.state.panels} capacity={this.state.capacity} electricity={this.state.electricity} /> )}/>
-        <Route path="/financial" render={(props) => ( <Financial data={this.state.data} btnClass={btnClass} noBtnClass={noBtnClass} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />)}/>
-        <Route path="/summary" render={(props) => ( <Summary address={this.state.address} panels={this.state.panels} batteryPower={this.state.batteryPower} /> )} />
-        <Route path="/done" render={(props) => ( <Done /> )} />
+          <Route exact path="/" render={(props) => ( <Home addressInput={this.addressChangerHandler} /> )}/>
+          <Route path="/loading" render={(props) => this.withMapBackground(<Loading address={this.state.address} />)} />
+          <Route path="/results" render={(props) => this.withMapBackground(<Results userWindowHeight={this.state.userWindowHeight} userWindowWidth={this.state.userWindowWidth} address={this.state.address} roofArea={this.state.roofArea} panels={this.state.panels} capacity={this.state.capacity} electricity={this.state.electricity} />)}/>
+          <Route path="/financial" render={(props) => this.withMapBackground(<Financial calculationWithBattery={this.state.calculationWithBattery} data={this.state.data} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />)}/>
+          <Route path="/summary" render={(props) => this.withMapBackground(<Summary address={this.state.address} panels={this.state.panels} batteryPower={this.state.batteryPower} />)} />
+          <Route path="/done" render={(props) => <Done />} />
         </Switch>
-        </div>
-        
-      
-
+      </div>
     );
   }
 }
 
 export default App;
-
-

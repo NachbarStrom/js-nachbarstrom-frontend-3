@@ -28,7 +28,6 @@ export const Results = props => {
 
   return (
     <div>
-      {map}
       <img src={nachbarstromLogo} className="logo" alt="Nachbarstrom"/>
       <div className="rectangle loading results">
         {header}
