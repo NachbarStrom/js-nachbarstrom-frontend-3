@@ -7,7 +7,7 @@ import { Results } from './components/Results';
 import { Financial } from './components/FinancialPlan/FinancialPlan';
 import { Summary } from './components/Summary';
 import { Done } from './components/Done';
-import { Map } from "./components/Map";
+import { Map } from "./components/GoogleMap/Map";
 
 export class App extends Component {
   state = {

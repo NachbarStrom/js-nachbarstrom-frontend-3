@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleApiComponent from './GoogleMap/GoogleApiComponent';
+import GoogleApiComponent from './GoogleApiComponent';
 import * as ReactDOM from 'react-dom';
 
 class Container extends React.Component {
