@@ -56,8 +56,8 @@ export const Done = () => {
       {processTimeline}
 
       <div className="more-questions">
-        <div className="more-questions-grey">Du hast noch Fragen? </div>
-        <div className="more-questions-blue">Wir freuen uns auf deine Fragen!</div>
+        <div className="more-questions-grey">Du hast noch Fragen? Wir freuen uns auf deine Fragen!</div>
+        <div className="more-questions-grey">Sende uns eine Email an info@nachbarstrom.eu or oder rufe uns an unter 015123473011 </div>
       </div>
 
       {contactButtons}
