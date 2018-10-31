@@ -41,7 +41,6 @@ export const Summary = props => {
           </div>
           <div className="Lorem-ipsum">
               Auf Basis deiner Angaben und unseren Annahmen findest du hier nochmal alle wichtigen Daten im Überblick. Sobald deine Anfrage genauer von uns geprüft wurde, erhältst du eine finale Kalkulation.
-            Ut enim ad minim
           </div>
           <div className="System-Size">
             Größe der Anlagem

@@ -16,7 +16,7 @@ export const FinancialPlanInput = props => {
         Wie hoch ist deine jährlicher Stromverbrauch?
     </div>
     <div className="explanation-1"
-         data-tip="To recommend the best solar system for your home <br /> we need to understand how much energy you use.">
+         data-tip="Die optimale Größe deiner Photovoltaik Anlage hängt direkt von  <br /> deinem Stromverbrauch ab. Du findest deinen Jahresverbrauch <br /> auf der letzten Rechnung deines Stromanbieters..">
       <FaQuestionCircle size={16} color="#757575" />
     </div>
     <ReactTooltip place="top" type="dark" effect="float" multiline="true" />
@@ -35,7 +35,9 @@ export const FinancialPlanInput = props => {
     </div>
 
     <div className="explanation-2"
-         data-tip="You can adjust your solar system size <br /> to estimate the cost and  the savings.">
+         data-tip="Wir haben die optimale Größe deiner Solaranlage day and save unused <br />
+         electricity to consume it at night bereits errechnet. Trotzdem kannst  <br />
+         du hier verschiedene Konfigurationen mit dem Finaz Planer testen.">
       <FaQuestionCircle size={16} color="#757575"/>
     </div>
     <div className="sliders-2">
@@ -50,7 +52,10 @@ export const FinancialPlanInput = props => {
         Möchtest du zusätzliche einen Stromspeicher installieren?
     </div>
     <div className="explanation-3"
-         data-tip="With a battery, you can store electricity produced during the <br />  day and save unused electricity to consume it at night <br /> when your solar system is not generating energy. This will <br /> determine how much the energy independence you will be. ">
+         data-tip="Ein Stromspeicher kann die tagsüber produzierte Energie <br />
+         speichern und nachts wieder abgeben. bereits errechnet. <br />
+         Dadurch wirst du noch unabhängiger. ">
+
       <FaQuestionCircle size={16} color="#757575"/></div>
 
     <div className="with-battery">
