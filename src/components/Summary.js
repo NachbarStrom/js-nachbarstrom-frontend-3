@@ -7,11 +7,11 @@ import '../styles/App.css';
 
 import fullCircleIcon from "../images/circle-3-thirds.png";
 import numberThreeIcon from "../images/number3.png";
-import secondStepIcon from "../images/circle-2-thirds.png";
 import tickIcon from "../images/tick.png";
 import mapMarker from "../images/map-marker.png";
 import satelliteScreenshot from "../images/screenshot-satellite.png";
 import mapScreenshot from "../images/screenshot-map.png";
+import { Progress } from "antd";
 
 export const Summary = props => {
   return (
@@ -75,14 +75,23 @@ export const Summary = props => {
         </div>
 
         <div>
-          <img src={secondStepIcon} className="ninety-percent-image" />
+          <Progress
+            className="ninety-percent-image"
+            type="circle"
+            percent={props.energyIndependencePercentage}
+            width={95}
+            strokeColor={"#4B53FF"}
+            strokeWidth={8}
+            showInfo={false}
+          />
           <div className="ninety-percent-image">
             <div className="center-element">
-              <div className="ninety">80</div>
+              <div className="ninety">{props.energyIndependencePercentage}</div>
               <div className="percentage">%</div>
               <div className="energy-inc">Autark</div>
             </div>
           </div>
+
           <div className="first-check">
             <img src={tickIcon} className="checked-approved" />
             <div className="text-grey">Glückwunsch! Dein Dach ist </div>
