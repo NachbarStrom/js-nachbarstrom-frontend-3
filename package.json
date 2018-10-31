@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.10.3",
     "chart.js": "^2.7.2",
     "google-map-react": "^1.0.9",
     "google-maps-react": "^2.0.2",
