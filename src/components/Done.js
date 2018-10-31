@@ -38,18 +38,7 @@ export const Done = () => {
 
   const contactButtons = (
     <div>
-      <div className="call-button">
-        <img src={phoneImage} className="phone-image"/>
-        Call us
-      </div>
-      <div className="email-button">
-        <img src={emailImage} className="email-image"/>
-        Email us
-      </div>
-      <div className="chat-button">
-        <MdChat size={20}/>
-        Live Chat
-      </div>
+
     </div>
   );
 
