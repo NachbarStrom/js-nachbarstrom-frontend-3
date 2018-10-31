@@ -14,7 +14,7 @@ export const Results = props => {
   const header = (
     <div className="header">
       <img src={stepOneIcon} className="Group-9" alt="Step one icon" />
-      <div className="AI-SOLAR-CALCULATION">AI SOLAR CALCULATION</div>
+      <div className="AI-SOLAR-CALCULATION">AUTOMATISCHE BERECHNUNG</div>
     </div>);
 
   return (
@@ -23,20 +23,19 @@ export const Results = props => {
       <div className="rectangle loading results">
         {header}
         <div className="Line"/>
-        <div className="Your-address">Your address</div>
+        <div className="Your-address">Deine Adresse</div>
         <input type="text" className="rectangle-input" name="name"
                placeholder="Enter your house address" value={props.address}/>
         <div className="approved">
           <img src={tickIcon} className="Group-3"/>
-          <div className="Congrats-Your-prope">Congrats! Your property is solar
-            friendly.
+          <div className="Congrats-Your-prope">Glückwunsch! Dein Dach ist solar-freundlich.
           </div>
         </div>
 
         <div className="Rectangle-12 results-rec">
 
           <div className="left-right">
-            <div className="Usable-Roof-Area">Usable Roof Area</div>
+            <div className="Usable-Roof-Area">Nutzbare Dachfläche</div>
             <div className="group-6">
               <img src={solarPanelIcon} className="solar-panel-2"/>
               <div className="group-5">
@@ -46,26 +45,25 @@ export const Results = props => {
                 <div className="small-info">= {props.capacity} kWp</div>
               </div>
             </div>
-            <div className="edit-roof-area">edit roof area</div>
+            <div className="edit-roof-area">Nutzbare Dachfläche</div>
           </div>
 
           <div className="Line-2"/>
           <div className="left-right right">
             <div className="Usable-Roof-Area electricity-from-usable">
-              Electricity from Usable Sunlight
+                Energie aus nutzbarem Sonnenlicht
             </div>
             <img src={sunIcon} className="sun-results"/>
             <div className="sqm-right">
               <div className="sqm text-style-1">{props.electricity}</div>
-              <div className="sqm text-style"> kWh/yr</div>
+              <div className="sqm text-style"> kWh/p.a.</div>
             </div>
           </div>
         </div>
 
         <div className="great">
-          <div className="Great-To-find-out">Great!</div>
-          <div className="Great-To-find-out">To find out how much you can save
-            please go next the step.
+          <div className="Great-To-find-out">Großartig!</div>
+          <div className="Great-To-find-out">Um herrauszufinden wieviel Geld du sparts, klicke weiter.
           </div>
         </div>
 

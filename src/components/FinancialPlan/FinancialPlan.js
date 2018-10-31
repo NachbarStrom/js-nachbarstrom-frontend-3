@@ -16,7 +16,7 @@ export const Financial = props => {
     <div>
       <img src={secondStepIcon} className="Group-9" alt="Second step icon"/>
       <img src={numberTwoIcon} className="number-two" alt="Number two icon"/>
-      <div className="FINANCIAL-PLAN">FINANCIAL PLAN</div>
+      <div className="FINANCIAL-PLAN">Finanz Planer</div>
     </div>);
 
   const financialPlanInput = (
@@ -40,7 +40,7 @@ export const Financial = props => {
     <div>
       <button className="graph-pink-box">
         <div className="pink-title">€9,900</div>
-        <div className="pink-subtitle">Solar System Cost</div>
+        <div className="pink-subtitle">Gesamtkosten</div>
       </button>
       <div className="pink-line"/>
 
@@ -48,13 +48,13 @@ export const Financial = props => {
         <div className="green-title">€21,000</div>
       </button>
       <div className="green-line"/>
-      <div className="green-subtitle">20 Years Savings</div>
+      <div className="green-subtitle">Einsparung nach 20 Jahren</div>
 
       <button className="graph-orange-box">
         <div className="orange-title">14 years</div>
       </button>
       <div className="orange-line"/>
-      <div className="orange-subtitle">Payback Time</div>
+      <div className="orange-subtitle">Amortisationszeit</div>
 
       <button className="graph-blue-box">
         <div className="blue-title">- %</div>
@@ -68,27 +68,27 @@ export const Financial = props => {
         {header}
         <div className="Line-3"/>
 
-        <div className="personalize-your-sol">Personalize your solar analysis:
+        <div className="personalize-your-sol">Konfiguriere deine Photovoltaik Anlage:
         </div>
         <img src={checkedApproved} className="oval-2"/>
-        <div className="your-financial-est">Your financial plan estimate:</div>
+        <div className="your-financial-est">Dein Solarinvestment auf einen Blick:</div>
 
         {financialPlanInput}
 
         <div className="rectangle-12">
           {coloredButtons}
           <div className="blue-line"/>
-          <div className="blue-subtitle">Energy Independent</div>
+          <div className="blue-subtitle">Autarkielevel</div>
           <div className="chart-separator"/>
           {diagram}
         </div>
 
         <Link to='/results'>
-          <button className="back-button">Back</button>
+          <button className="back-button">Zurück</button>
         </Link>
 
         <Link to='/summary'>
-          <button className="next-button">Next</button>
+          <button className="next-button">Weiter</button>
         </Link>
 
       </div>

@@ -56,19 +56,19 @@ export const Done = () => {
   return (
     <div className="done-rectangle">
       <div className="awesome">
-        Awesome!< br/>
-        You are on your way to become energy independent.
+          Fantastisch! < br/>
+          Du bist auf dem Weg unabhängig von Stromanbietern zu werden.
       </div>
       <div className="searching">
-        NachbarStrom's AI is searching for the best offer for your
-        house. We will contact you as soon as possible.
+          Wir leiten deine Anfrage an unseren Partner weiter. Dieser wird sich in den kommenden Tagen telefonisch
+          bei dir melden um deine Anlage noch besser zu verstehen. Danke für deine Gedult.
       </div>
 
       {processTimeline}
 
       <div className="more-questions">
-        <div className="more-questions-grey">Still have some questions?</div>
-        <div className="more-questions-blue">We are here to help you.</div>
+        <div className="more-questions-grey">Du hast noch Fragen? </div>
+        <div className="more-questions-blue">Wir freuen uns auf deine Fragen!</div>
       </div>
 
       {contactButtons}

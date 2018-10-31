@@ -20,12 +20,12 @@ export const Summary = props => {
         <img src={fullCircleIcon} className="Group-9" />
         <img src={numberThreeIcon} className="number-two" />
         <div className="FINANCIAL-PLAN">
-          YOUR SOLAR SUMMARY & CONTACT
+            ZUSAMMENFASSUNG
         </div>
         <div className="Line-3" />
         <div className="Rectangle-15">
           <div className="Your-Property">
-            Your Property
+            Dein Haus
           </div>
           <div className="addres-line">
             <img src={mapMarker} className="pin" />
@@ -37,14 +37,14 @@ export const Summary = props => {
           </div>
           <div className="Line-5" />
           <div className="Overall-text">
-            Overall
+              Zusammenfassung
           </div>
           <div className="Lorem-ipsum">
-            iusmod tempor incididunt ut labore et dolore magna aliqua.
+              Auf Basis deiner Angaben und unseren Annahmen findest du hier nochmal alle wichtigen Daten im Überblick. Sobald deine Anfrage genauer von uns geprüft wurde, erhältst du eine finale Kalkulation.
             Ut enim ad minim
           </div>
           <div className="System-Size">
-            System Size
+            Größe der Anlagem
           </div>
           <div className="summary-system-size">
             <div className="summary-numbers inline-element">7</div>
@@ -59,17 +59,17 @@ export const Summary = props => {
             <div className="panels-number battery-power"> {props.batteryPower}kWh battery</div>
           </div>
           <div className="summary-installation-cost">
-            <div className="summary-tiny-title">Solar System & Installation Cost</div>
+            <div className="summary-tiny-title">Installationskosten</div>
             <div className="summary-numbers margin-five">€ 12,900</div>
             <div className="panels-number-average margin-five">Based on avg. €1,140/kWp</div>
           </div>
           <div className="summary-solar-electricity">
-            <div className="summary-tiny-title">Solar Electricity</div>
+            <div className="summary-tiny-title">Erzeugte solar Energie</div>
             <div className="summary-numbers margin-five">2500</div>
-            <div className="kwp inline-element">kWh/year</div>
+            <div className="kwp inline-element">kWh/p.a.</div>
           </div>
           <div className="summary-twenty-years">
-            <div className="summary-tiny-title">Total 20-year net savings</div>
+            <div className="summary-tiny-title">Ersparnis nach 20 Jahren</div>
             <div className="summary-numbers margin-five">€ 21,000</div>
             <div className="panels-number-average margin-five">€ 1,050 per year</div>
           </div>
@@ -79,34 +79,32 @@ export const Summary = props => {
           <img src={secondStepIcon} className="ninety-percent-image" />
           <div className="ninety-percent-image">
             <div className="center-element">
-              <div className="ninety">90</div>
+              <div className="ninety">80</div>
               <div className="percentage">%</div>
-              <div className="energy-inc">Energy ind.</div>
+              <div className="energy-inc">Autark</div>
             </div>
           </div>
           <div className="first-check">
             <img src={tickIcon} className="checked-approved" />
-            <div className="text-grey">Congrats! Your property is </div>
-            <div className="text-blue">solar friendly</div>
+            <div className="text-grey">Glückwunsch! Dein Dach ist </div>
+            <div className="text-blue">solar-freundlich.</div>
             <div className="text-grey">. </div>
           </div>
 
           <div className="second-check">
           <img src={tickIcon} className="checked-approved" />
-              <div className="text-grey">You will be  </div>
-              <div className="text-blue">80% energy independent</div>
+              <div className="text-grey">Du bist zu </div>
+              <div className="text-blue">80% unabhangig von Stromanbietern</div>
               <div className="text-grey">!  </div>
           </div>
 
           <div className="third-check">
           <img src={tickIcon} className="checked-approved" />
-              <div className="text-grey">We found</div>
-              <div className="text-blue"> 6 certified installers </div>
-              <div className="text-grey">in your region.</div>
+              <div className="text-grey">Unser Partner ist in deiner Region verfügbar.</div>
           </div>
 
           <div className="line-3-copy-2" />
-          <div className="get-the-best-deal">Get the Best Deal</div>
+          <div className="get-the-best-deal">Sende uns deine Anfrage jetzt!</div>
 
           <div className="line-3-copy-3" />
 
@@ -117,17 +115,15 @@ export const Summary = props => {
 
           <div className="agreement-checkbox">
             <input type="checkbox" className="rectangle-checkbox" />
-            By clicking this button, you agree to the processing of my
-            data on this form as described in the NachbarStrom
-            <a href="http://google.com">Privacy</a>.
+              Mit der Verarbeitung meiner Daten bin ich einverstanden und akzeptiere die
+            <a href="http://www.nachbarstrom.eu"> Allgemeinen Geschäftsbedingungen.</a>
           </div>
           <div className="we-will-find">
-            NachbarStrom's AI can find the best retailer's offer for you
-            based on the system you just configured.
+              Unser zertifizierter Installationspartner wird sich mit dir in Kontakt setzten und die genaue Ausführung erarbeiten. Deine Anfrage ist komplett kostenlos und unverbindlich.
           </div>
         </div>
-        <Link to='/financial'><button className="back-button">Back</button></Link>
-        <Link to='/done'><button className="next-button">Submit</button></Link>
+        <Link to='/financial'><button className="back-button">Zurück</button></Link>
+        <Link to='/done'><button className="next-button">Abschicken</button></Link>
       </div>
     </div>
   )

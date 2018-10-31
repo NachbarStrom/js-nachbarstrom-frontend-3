@@ -22,14 +22,15 @@ return (
         </header>
 
         <div className="starting-wondering">
-        <p>Wondering how many solar panels fit on your roof?</p>
-        <p className="title-p">NachbarStrom can tell you!</p>
+        <p>Lohnt sich Photovoltaik für mich?</p>
+            <p>Ist mein Dach überhaupt geeignet?</p>
+        <p className="title-p">Wir sagen es dir. Mit nur einem Klick!</p>
         </div>
         <div className="rectangle welcome">
-        <p className="rectangle-find-out">Find out how much you can save…</p> 
-        <p><input type="text" className="rectangle-input" name="name" placeholder="Enter your house address" onChange={props.addressInput} /></p>
+        <p className="rectangle-find-out">Ermittle dein Energiepotenzial...</p>
+        <p><input type="text" className="rectangle-input" name="name" placeholder="Gib hier deine Adresse ein" onChange={props.addressInput} /></p>
         <div>
-          <p className="rectangle-agreement"><input type="checkbox" className="rectangle-checkbox" />Lorem ipsum dolor sit amet</p>
+          <p className="rectangle-agreement"><input type="checkbox" className="rectangle-checkbox" />..mit KI in nur 3 Sekunden</p>
           </div>
           <div className="div-inline">
           <Link to='/loading'><button className="rectangle-button">Go Solar</button></Link>

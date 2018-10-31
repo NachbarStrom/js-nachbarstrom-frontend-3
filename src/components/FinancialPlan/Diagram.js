@@ -4,7 +4,7 @@ import React from "react";
 export const Diagram = () => (
   <div>
     <div className="your-financial-cost">
-      Your Financial Cost Comparison
+        Energiekosten Überblick
     </div>
     <div className="chart-div">
       <Line
@@ -21,7 +21,7 @@ const DATA = {
   labels: ['1', '5', '10', '15', '20', '20', '25'],
   datasets: [
     {
-      label: 'With Solar',
+      label: 'Mit Solar',
       fill: false,
       lineTension: 0.4,
       backgroundColor: '#4B53FF',
@@ -42,7 +42,7 @@ const DATA = {
       data: [11, 12, 13, 15, 18, 22, 28]
     },
     {
-      label: 'Without Solar',
+      label: 'Ohne Solar',
       fill: false,
       lineTension: 0.4,
       backgroundColor: '#AEAEAE',
@@ -70,13 +70,13 @@ const OPTIONS = {
     yAxes: [{
       scaleLabel: {
         display: true,
-        labelString: 'Cost (incl. electricity bill)',
+        labelString: 'Kosten  (incl. electricity bill)',
       },
     }],
     xAxes: [{
       scaleLabel: {
         display: true,
-        labelString: 'Year',
+        labelString: 'Jahre',
       },
       gridLines : {
         display : false,

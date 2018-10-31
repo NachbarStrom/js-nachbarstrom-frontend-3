@@ -13,7 +13,7 @@ export const FinancialPlanInput = props => {
   return (
   <div className="rectangle-11">
     <div className="questions yearly-consumption">
-      What is your yearly electricity consumption?
+        Wie hoch ist deine jährlicher Stromverbrauch?
     </div>
     <div className="explanation-1"
          data-tip="To recommend the best solar system for your home <br /> we need to understand how much energy you use.">
@@ -31,7 +31,7 @@ export const FinancialPlanInput = props => {
     </div>
 
     <div className="questions panel-systems">
-      How much solar power do you want to install?
+        Bestimme die Leistung deiner Photovoltaik Anlage?
     </div>
 
     <div className="explanation-2"
@@ -47,7 +47,7 @@ export const FinancialPlanInput = props => {
     </div>
 
     <div className="questions battery">
-      Do you want a storage battery?
+        Möchtest du zusätzliche einen Stromspeicher installieren?
     </div>
     <div className="explanation-3"
          data-tip="With a battery, you can store electricity produced during the <br />  day and save unused electricity to consume it at night <br /> when your solar system is not generating energy. This will <br /> determine how much the energy independence you will be. ">
@@ -57,14 +57,14 @@ export const FinancialPlanInput = props => {
       <div className={batteryButtonClass}
            onClick={props.batteryActivationHandler}>
         <div><TiBatteryCharge size={60}/></div>
-        With battery
+          Mit Speicher
       </div>
     </div>
     <div className="no-battery">
       <div className={noBatteryButtonClass}
            onClick={props.noBatteryActivationHandler}>
         <div><TiBatteryCharge size={60}/></div>
-        No battery
+          Ohne Speicher
       </div>
     </div>
   </div>

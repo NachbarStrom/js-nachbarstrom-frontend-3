@@ -17,15 +17,15 @@ export const Loading = props => {
       <div className="rectangle loading">
         <div className="header">
           <img src={firstStep} className="Group-9" />
-          <div className="AI-SOLAR-CALCULATION">AI SOLAR CALCULATION</div>
+          <div className="AI-SOLAR-CALCULATION">AUTOMATISCHE BERECHNUNG</div>
         </div>
         <div className="Line" />
-        <div className="Your-address">Your address</div>
+        <div className="Your-address">Deine Adresse</div>
         <p>
           <input type="text" className="rectangle-input" value={props.address} />
         </p>
         <div className="Rectangle-11 loading-rec">
-          <div className="Analyzing-your-roof">Analyzing your roof...</div>
+          <div className="Analyzing-your-roof">Dein Dach wird analysiert...</div>
           <img src={loadingSun} className="sun one" />
           <img src={loadingSun} className="sun two" />
           <img src={loadingSun} className="sun three" />
