@@ -11,6 +11,9 @@ import truckIcon from "../images/done/truck.png";
 import phoneImage from '../images/done/contact/phone.png';
 import emailImage from "../images/done/contact/email.png";
 
+const EMAIL_ADDRESS = "info@nachbarstrom.eu";
+const PHONE_NUMBER = "+49 151 2347 3011";
+
 export const Done = () => {
 
   const processTimeline = (
@@ -57,7 +60,10 @@ export const Done = () => {
 
       <div className="more-questions">
         <div className="more-questions-grey">Du hast noch Fragen? Wir freuen uns auf deine Fragen!</div>
-        <div className="more-questions-grey">Sende uns eine Email an info@nachbarstrom.eu or oder rufe uns an unter 015123473011 </div>
+        <div className="more-questions-grey">
+          Sende uns eine Email an <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a> oder
+          rufe uns an unter <a href={`tel:?${PHONE_NUMBER}`}>{PHONE_NUMBER}</a>
+        </div>
       </div>
 
       {contactButtons}
