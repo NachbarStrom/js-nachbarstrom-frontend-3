@@ -32,6 +32,20 @@ export class App extends Component {
     energyIndependencePercentage: 90,
   };
 
+  DEFAULT_LOCATION = {
+    lat: 48.18386,
+    lng: 11.6111
+  };
+
+  getAddressLatLng() {
+    const addressObject = this.state.addressObjectOfSearchBox;
+    if (!addressObject) {
+      return this.DEFAULT_LOCATION;
+    }
+    const { lat, lng } = addressObject.geometry.location;
+    return { lat: lat(), lng: lng() }
+  }
+
   componentWillMount() {
     this.setState({
       userWindowHeight: window.innerHeight + 'px',
@@ -50,7 +64,11 @@ export class App extends Component {
   withMapBackground = component => (
     <div>
       <div className="map-render-div">
-        <Map onMarkerComplete={e => {}} geoJson={null} />
+        <Map
+          onMarkerComplete={e => {}}
+          geoJson={null}
+          centerLatLng={this.getAddressLatLng()}
+        />
       </div>
       {component}
     </div>

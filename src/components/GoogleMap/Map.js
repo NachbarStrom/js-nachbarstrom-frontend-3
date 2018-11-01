@@ -9,6 +9,7 @@ class Container extends React.Component {
     } else {
       return (
         <GoogleMap
+          centerLatLng={this.props.centerLatLng}
           google={this.props.google}
           onMarkerComplete={this.props.onMarkerComplete}
           geoJson={this.props.geoJson}
@@ -19,10 +20,6 @@ class Container extends React.Component {
 }
 
 class GoogleMap extends React.Component {
-  DEFAULT_LOCATION = {
-    lat: 48.18386,
-    lng: 11.6111
-  };
   DEFAULT_ZOOM = 19;
 
   componentDidMount() {
@@ -36,27 +33,32 @@ class GoogleMap extends React.Component {
     if (this.props.geoJson !== prevProps.geoJson) {
       this.drawGeoJson(this.props.geoJson);
     }
+    if (this.props.centerLatLng !== prevProps.centerLatLng) {
+      const googleLatLng = this.centerLatLngToGoogleLatLng();
+      this.map.setCenter(googleLatLng);
+      console.log("Map center changed to:", googleLatLng);
+    }
+  }
+
+  centerLatLngToGoogleLatLng() {
+    const { google } = this.props;
+    const { lat, lng } = this.props.centerLatLng;
+    return new google.maps.LatLng(lat, lng);
   }
 
   loadMap = () => {
     if (this.props && this.props.google) {
       const { google } = this.props;
-      const maps = google.maps;
 
-      const mapRef = this.refs.map;
-      const node = ReactDOM.findDOMNode(mapRef);
-
-      const center = new maps.LatLng(
-        this.DEFAULT_LOCATION.lat,
-        this.DEFAULT_LOCATION.lng
-      );
       const mapConfig = {
-        center: center,
+        center: this.centerLatLngToGoogleLatLng(),
         mapTypeId: 'hybrid',
         tilt: 0,
         zoom: this.DEFAULT_ZOOM
       };
-      this.map = new maps.Map(node, mapConfig);
+
+      const mapRef = this.refs.map;
+      this.map = new google.maps.Map(ReactDOM.findDOMNode(mapRef), mapConfig);
       this.addDrawingManager(this.map, google);
     }
     if (this.props && this.props.geoJson) {
