@@ -17,8 +17,8 @@ export const Summary = props => {
   return (
     <div>
       <div className="summary-rectangle">
-        <img src={fullCircleIcon} className="Group-9" />
-        <img src={numberThreeIcon} className="number-two" />
+        <img src={fullCircleIcon} className="Group-9" alt="Final step" />
+        <img src={numberThreeIcon} className="number-two" alt="3" />
         <div className="FINANCIAL-PLAN">
             ZUSAMMENFASSUNG
         </div>
@@ -28,12 +28,12 @@ export const Summary = props => {
             Dein Haus
           </div>
           <div className="addres-line">
-            <img src={mapMarker} className="pin" />
+            <img src={mapMarker} className="pin" alt="Map marker" />
             <div className="address-text">{props.address}</div>
           </div>
           <div className="map-images">
-            <img src={satelliteScreenshot} className="satelite" />
-            <img src={mapScreenshot} className="map-normal" />
+            <img src={satelliteScreenshot} className="satelite" alt="Your house"/>
+            <img src={mapScreenshot} className="map-normal" alt="Your neighborhood" />
           </div>
           <div className="Line-5" />
           <div className="Overall-text">
@@ -93,21 +93,21 @@ export const Summary = props => {
           </div>
 
           <div className="first-check">
-            <img src={tickIcon} className="checked-approved" />
+            <img src={tickIcon} className="checked-approved" alt="tick" />
             <div className="text-grey">Glückwunsch! Dein Dach ist </div>
             <div className="text-blue">solar-freundlich.</div>
             <div className="text-grey">. </div>
           </div>
 
           <div className="second-check">
-          <img src={tickIcon} className="checked-approved" />
+          <img src={tickIcon} className="checked-approved" alt="tick" />
               <div className="text-grey">Du bist zu </div>
               <div className="text-blue">80% unabhangig von Stromanbietern</div>
               <div className="text-grey">!  </div>
           </div>
 
           <div className="third-check">
-          <img src={tickIcon} className="checked-approved" />
+          <img src={tickIcon} className="checked-approved" alt="tick" />
               <div className="text-grey">Unser Partner ist in deiner Region verfügbar.</div>
           </div>
 

@@ -16,7 +16,7 @@ export const Loading = props => {
       </header>
       <div className="rectangle loading">
         <div className="header">
-          <img src={firstStep} className="Group-9" />
+          <img src={firstStep} className="Group-9" alt="Step 1" />
           <div className="AI-SOLAR-CALCULATION">AUTOMATISCHE BERECHNUNG</div>
         </div>
         <div className="Line" />
@@ -26,12 +26,12 @@ export const Loading = props => {
         </p>
         <div className="Rectangle-11 loading-rec">
           <div className="Analyzing-your-roof">Dein Dach wird analysiert...</div>
-          <img src={loadingSun} className="sun one" />
-          <img src={loadingSun} className="sun two" />
-          <img src={loadingSun} className="sun three" />
-          <img src={loadingSun} className="sun four" />
-          <img src={loadingSun} className="sun five" />
-          <img src={solarPanel} className="solar-panel" />
+          <img src={loadingSun} className="sun one" alt="" />
+          <img src={loadingSun} className="sun two" alt="" />
+          <img src={loadingSun} className="sun three" alt="" />
+          <img src={loadingSun} className="sun four" alt="" />
+          <img src={loadingSun} className="sun five" alt="" />
+          <img src={solarPanel} className="solar-panel" alt="" />
         </div>
         <div className="NachbarStrom-is-doin">NachbarStrom is doing its AI magic…</div>
         <Link to='/results'><button className="rectangle-button">Results</button></Link>

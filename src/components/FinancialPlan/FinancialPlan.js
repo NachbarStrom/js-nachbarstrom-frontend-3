@@ -7,7 +7,7 @@ import '../../styles/App.css';
 
 import secondStepIcon from "../../images/circle-2-thirds.png";
 import numberTwoIcon from "../../images/number2.png";
-import checkedApproved from "../../images/tick.png";
+import tickIcon from "../../images/tick.png";
 import { FinancialPlanInput } from "./FinancialPlanInput";
 import { Diagram } from "./Diagram";
 
@@ -70,7 +70,7 @@ export const Financial = props => {
 
         <div className="personalize-your-sol">Konfiguriere deine Photovoltaik Anlage:
         </div>
-        <img src={checkedApproved} className="oval-2"/>
+        <img src={tickIcon} className="oval-2" alt="Tick" />
         <div className="your-financial-est">Dein Solarinvestment auf einen Blick:</div>
 
         {financialPlanInput}

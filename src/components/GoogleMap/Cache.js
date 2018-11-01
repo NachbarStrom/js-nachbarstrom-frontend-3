@@ -51,7 +51,7 @@ export const Cache = (window_ => {
 
           // Pick off callback, if there is one
           if (src.match(/callback=CALLBACK_NAME/)) {
-            src = src.replace(/(callback=)[^\&]+/, `$1${cbName}`);
+            src = src.replace(/(callback=)[^&]+/, `$1${cbName}`);
             window[cbName] = tag.onload;
           } else {
             tag.addEventListener('load', tag.onload);

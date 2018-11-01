@@ -1,15 +1,12 @@
 import React from "react";
 import '../styles/FinancialPlan.css';
 import '../styles/Thanks.css';
-import { MdChat } from 'react-icons/md';
 import '../styles/App.css';
 
 import tickIcon from "../images/tick.png";
-import callIcon from "../images/done/phone-advice.png";
+import phoneIcon from "../images/done/phone-advice.png";
 import expertIcon from "../images/done/expert.png";
 import truckIcon from "../images/done/truck.png";
-import phoneImage from '../images/done/contact/phone.png';
-import emailImage from "../images/done/contact/email.png";
 
 const EMAIL_ADDRESS = "info@nachbarstrom.eu";
 const PHONE_NUMBER = "+49 151 2347 3011";
@@ -22,11 +19,11 @@ export const Done = () => {
       <div className="up-to">Bis 1 Tag</div>
       <div className="two-weeks">2 Wochen</div>
       <div className="by-arrangement">auf Termin</div>
-      <img src={tickIcon} className="calculate" />
+      <img src={tickIcon} className="calculate" alt="tick" />
       <div className="Line-7" />
-      <img src={callIcon} className="advice" />
-      <img src={expertIcon} className="on-site" />
-      <img src={truckIcon} className="installation" />
+      <img src={phoneIcon} className="advice" alt="phone" />
+      <img src={expertIcon} className="on-site" alt="expert" />
+      <img src={truckIcon} className="installation" alt="truck" />
       <div className="Line-6" />
       <div className="next-steps-title-blue">Analyse</div>
       <div className="next-steps-blue">Flächen & Kosten</div>
