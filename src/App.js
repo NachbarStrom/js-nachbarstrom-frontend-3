@@ -15,6 +15,7 @@ export class App extends Component {
     userWindowWidth: '100px',
     geoJson: null,
     address: 'Lichtenbergstraße 6, Garching',
+    addressOfSearchBox: null,
     roofArea: '30',
     panels: '30',
     capacity: '5',
@@ -45,10 +46,6 @@ export class App extends Component {
     this.setState({ calculationWithBattery: false });
   };
 
-  addressChangerHandler = (event) => {
-    this.setState({ address: event.target.value });
-  };
-
   formSubmitHandler = (event) => {
     this.setState({ address: event.target.value });
   };
@@ -62,11 +59,17 @@ export class App extends Component {
     </div>
   );
 
+  addressChangedHandler = addressesList => {
+    if (addressesList.length > 0) {
+      this.setState({ addressOfSearchBox: addressesList[0] });
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={(props) => ( <Home addressInput={this.addressChangerHandler} /> )}/>
+          <Route exact path="/" render={(props) => ( <Home addressChangedHandler={this.addressChangedHandler} /> )}/>
           <Route path="/loading" render={(props) => this.withMapBackground(<Loading address={this.state.address} />)} />
           <Route path="/results" render={(props) => this.withMapBackground(<Results userWindowHeight={this.state.userWindowHeight} userWindowWidth={this.state.userWindowWidth} address={this.state.address} roofArea={this.state.roofArea} panels={this.state.panels} capacity={this.state.capacity} electricity={this.state.electricity} />)}/>
           <Route path="/financial" render={(props) => this.withMapBackground(<Financial calculationWithBattery={this.state.calculationWithBattery} data={this.state.data} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />)}/>

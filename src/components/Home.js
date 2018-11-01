@@ -3,6 +3,7 @@ import '../styles/App.css';
 import { Link } from 'react-router-dom';
 
 import nachbarStromLogo from "../images/nachbarstrom-logo.png";
+import { AddressSearchBox } from "./SearchBox";
 
 export const Home = props => {
 
@@ -22,14 +23,10 @@ export const Home = props => {
     </div>
   );
 
-  const searchBox = (
-    <p>
-      <input
-        type="text" className="rectangle-input" name="name"
-        placeholder="Gib hier deine Adresse ein"
-        onChange={props.addressInput}
+  const addressSearchBox = (
+      <AddressSearchBox
+        addressChangedHandler={props.addressChangedHandler}
       />
-    </p>
   );
 
   const agreement = (
@@ -53,7 +50,7 @@ export const Home = props => {
 
       <div className="rectangle welcome">
         <p className="rectangle-find-out">Ermittle dein Energiepotenzial...</p>
-        {searchBox}
+        {addressSearchBox}
         {agreement}
         {goSolarButton}
       </div>
