@@ -24,8 +24,7 @@ export const Results = props => {
         {header}
         <div className="Line"/>
         <div className="Your-address">Deine Adresse</div>
-        <input type="text" className="rectangle-input" name="name"
-               placeholder="Enter your house address" value={props.address}/>
+        {props.addressSearchBox}
         <div className="approved">
           <img src={tickIcon} className="Group-3" alt="tick" />
           <div className="Congrats-Your-prope">Glückwunsch! Dein Dach ist solar-freundlich.

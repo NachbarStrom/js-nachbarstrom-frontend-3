@@ -65,20 +65,34 @@ export class App extends Component {
     }
     console.log("New address:", this.state.currentAddress);
   };
-  render() {
-    const addressSearchBox = (
-      <AddressSearchBox
-        currentAddress={this.state.currentAddress}
-        addressChangedHandler={this.addressChangedHandler}
-      />
-    );
 
+  getAddressSearchBox = () => (
+    <AddressSearchBox
+      currentAddress={this.state.currentAddress}
+      addressChangedHandler={this.addressChangedHandler}
+    />
+  );
+
+  getResultsPage = () => this.withMapBackground(
+      <Results
+        addressSearchBox={this.getAddressSearchBox()}
+        address={this.state.address}
+        capacity={this.state.capacity}
+        electricity={this.state.electricity}
+        userWindowHeight={this.state.userWindowHeight}
+        userWindowWidth={this.state.userWindowWidth}
+        roofArea={this.state.roofArea}
+        panels={this.state.panels}
+      />
+  );
+
+  render() {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={() => <Home addressSearchBox={addressSearchBox}/>}/>
-          <Route path="/loading" render={() => this.withMapBackground(<Loading addressSearchBox={addressSearchBox} />)} />
-          <Route path="/results" render={(props) => this.withMapBackground(<Results userWindowHeight={this.state.userWindowHeight} userWindowWidth={this.state.userWindowWidth} address={this.state.address} roofArea={this.state.roofArea} panels={this.state.panels} capacity={this.state.capacity} electricity={this.state.electricity} />)}/>
+          <Route exact path="/" render={() => <Home addressSearchBox={this.getAddressSearchBox()}/>}/>
+          <Route path="/loading" render={() => this.withMapBackground(<Loading addressSearchBox={this.getAddressSearchBox()} />)} />
+          <Route path="/results" render={this.getResultsPage}/>
           <Route path="/financial" render={(props) => this.withMapBackground(<Financial calculationWithBattery={this.state.calculationWithBattery} data={this.state.data} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />)}/>
           <Route path="/summary" render={(props) => this.withMapBackground(<Summary address={this.state.address} panels={this.state.panels} batteryPower={this.state.batteryPower} energyIndependencePercentage={this.state.energyIndependencePercentage}/>)} />
           <Route path="/done" render={(props) => this.withMapBackground(<Done />)} />
