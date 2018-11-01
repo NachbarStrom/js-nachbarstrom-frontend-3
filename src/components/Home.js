@@ -3,7 +3,6 @@ import '../styles/App.css';
 import { Link } from 'react-router-dom';
 
 import nachbarStromLogo from "../images/nachbarstrom-logo.png";
-import { AddressSearchBox } from "./SearchBox";
 
 export const Home = props => {
 
@@ -21,12 +20,6 @@ export const Home = props => {
         <button className="rectangle-button">Go Solar</button>
       </Link>
     </div>
-  );
-
-  const addressSearchBox = (
-      <AddressSearchBox
-        addressChangedHandler={props.addressChangedHandler}
-      />
   );
 
   const agreement = (
@@ -50,7 +43,7 @@ export const Home = props => {
 
       <div className="rectangle welcome">
         <p className="rectangle-find-out">Ermittle dein Energiepotenzial...</p>
-        {addressSearchBox}
+        {props.addressSearchBox}
         {agreement}
         {goSolarButton}
       </div>

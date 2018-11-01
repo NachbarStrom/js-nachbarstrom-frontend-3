@@ -21,9 +21,7 @@ export const Loading = props => {
         </div>
         <div className="Line" />
         <div className="Your-address">Deine Adresse</div>
-        <p>
-          <input type="text" className="rectangle-input" value={props.address} />
-        </p>
+        {props.addressSearchBox}
         <div className="Rectangle-11 loading-rec">
           <div className="Analyzing-your-roof">Dein Dach wird analysiert...</div>
           <img src={loadingSun} className="sun one" alt="" />

@@ -37,6 +37,7 @@ export const AddressSearchBox = hoc(props =>
       onPlacesChanged={props.onPlacesChanged}
     >
       <input
+        defaultValue={props.currentAddress}
         type="text"
         placeholder="Gib hier deine Adresse ein"
         className="rectangle-input"
