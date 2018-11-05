@@ -1,14 +1,14 @@
 import React from "react";
-import '../styles/App.css';
+import '../../styles/App.css';
 import { compose, withProps, lifecycle } from "recompose";
 import { withScriptjs } from "react-google-maps";
 import { StandaloneSearchBox } from "react-google-maps/lib/components/places/StandaloneSearchBox";
+import { GOOGLE_API_URL } from "./apiURL";
+
 
 const hoc = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?" +
-      "key=AIzaSyD0EQKyNdLXCDOfOmP9GMa__7_N91g7deM" +
-      "&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: GOOGLE_API_URL,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
   }),

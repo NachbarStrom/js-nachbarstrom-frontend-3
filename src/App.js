@@ -7,8 +7,8 @@ import { Results } from './components/Results';
 import { Financial } from './components/FinancialPlan/FinancialPlan';
 import { Summary } from './components/Summary';
 import { Done } from './components/Done';
-import { Map } from "./components/GoogleMap/Map";
-import { AddressSearchBox } from "./components/AddressSearchBox";
+import { AddressSearchBox, Map } from "./components/Google";
+
 
 export class App extends Component {
   state = {
@@ -64,11 +64,7 @@ export class App extends Component {
   withMapBackground = component => (
     <div>
       <div className="map-render-div">
-        <Map
-          onMarkerComplete={e => {}}
-          geoJson={null}
-          centerLatLng={this.getAddressLatLng()}
-        />
+        <Map centerLatLng={this.getAddressLatLng()}/>
       </div>
       {component}
     </div>
@@ -81,7 +77,6 @@ export class App extends Component {
         currentAddress: addressesList[0].formatted_address,
       });
     }
-    console.log("New address:", this.state.currentAddress);
   };
 
   getAddressSearchBox = () => (
