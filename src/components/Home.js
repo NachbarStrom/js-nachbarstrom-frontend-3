@@ -8,8 +8,7 @@ export const Home = props => {
 
   const leftText = (
     <div className="starting-wondering">
-      <p>Lohnt sich Photovoltaik für mich?</p>
-      <p>Ist mein Dach überhaupt geeignet?</p>
+      <p>Lohnt sich Photovoltaik für mich? Ist mein Dach überhaupt geeignet?</p>
       <p className="title-p">Wir sagen es dir. Mit nur einem Klick!</p>
     </div>
   );
@@ -25,8 +24,7 @@ export const Home = props => {
   const agreement = (
     <div>
       <p className="rectangle-agreement">
-        <input type="checkbox" className="rectangle-checkbox"/>
-        ..mit KI in nur 3 Sekunden
+        ...mit KI in nur 3 Sekunden
       </p>
     </div>
   );

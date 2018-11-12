@@ -47,13 +47,13 @@
     display: inline-block;
     text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     color: #FFFFFF;
-    font-family: 'Roboto', sans-serif;
-    font-size: 48px;
+    font-family: 'Avenir-Black', sans-serif;
+    font-size: 36px;
     font-weight: 700;
-    width: 648px;
+    width: 700px;
     text-align: left;
     position: absolute;
-    top: 6em;
+    top: 11em;
     left: 2em;
 }
 
@@ -80,7 +80,7 @@
 
 .rectangle-find-out {
   color: #4A4A4A;
-  font-family: Roboto;
+  font-family: Roboto-Medium;
   font-size: 24px;
   font-weight: 500;
   line-height: 29px;
@@ -90,11 +90,11 @@
 }
 
 .rectangle-agreement {
-  color: #4A4A4A;
-  font-family: Roboto;
-  font-size: 13px;
+  color: #4649fa;
+  font-family: Roboto-Medium;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 24px;
   width: 289px;
   text-align: left;
   vertical-align: middle;
@@ -133,13 +133,13 @@
   border-radius: 5px;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.25);
   width: 120px;
-  height: 40px;
+  height: 48px;
   font-family: Roboto;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
   color: #FFFFFF;
   position: absolute;
-  bottom: 43px;
+  bottom: 32px;
   right: 32px;
 }
