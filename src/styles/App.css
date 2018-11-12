@@ -63,6 +63,7 @@
   border-radius: 10px;
   box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.23999999463558197);
   width: 520px;
+  height: 700px;
   text-align: left;
   font-family: 'Roboto', sans-serif;
   position: absolute;
@@ -142,4 +143,5 @@
   position: absolute;
   bottom: 32px;
   right: 32px;
+  top: 200px;
 }
