@@ -31,7 +31,6 @@ export const Loading = props => {
           <img src={loadingSun} className="sun five" alt="" />
           <img src={solarPanel} className="solar-panel" alt="" />
         </div>
-        <div className="NachbarStrom-is-doin">NachbarStrom is doing its AI magic…</div>
         <Link to='/results'><button className="rectangle-button">Results</button></Link>
       </div>
     </div>
