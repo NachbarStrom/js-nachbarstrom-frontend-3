@@ -21,12 +21,13 @@ export const Done = () => {
       <div className="by-arrangement">auf Termin</div>
       <img src={tickIcon} className="calculate" alt="tick" />
       <div className="Line-7" />
-      <img src={phoneIcon} className="advice" alt="phone" />
-      <img src={expertIcon} className="on-site" alt="expert" />
-      <img src={truckIcon} className="installation" alt="truck" />
+        <img src={phoneIcon} className="advice" alt="phone" />
+        <img src={expertIcon} className="on-site" alt="expert" />
+        <img src={truckIcon} className="installation" alt="truck" />
       <div className="Line-6" />
       <div className="next-steps-title-blue">Analyse</div>
       <div className="next-steps-blue">Flächen & Kosten</div>
+      <div className="next-steps-blfantue">Flächen & Kosten</div>
       <div className="next-steps-title-advice">Beratung </div>
       <div className="next-steps-advice">Persönlich & Kompetent</div>
       <div className="next-steps-title-on-site">Vor Ort Termin</div>

@@ -56,7 +56,7 @@
       position: absolute;
       bottom: 24px;
       right: 32px;
-    width: 88px;
+    width: 118px;
     height: 32px;
     border-radius: 5px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
@@ -167,7 +167,7 @@
 .questions {
   color: #4A4A4A;
   font-family: Roboto;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
   line-height: 22px;
   text-align: left;
