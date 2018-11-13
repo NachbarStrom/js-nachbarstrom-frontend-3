@@ -8,13 +8,13 @@ import { Financial } from './components/FinancialPlan/FinancialPlan';
 import { Summary } from './components/Summary';
 import { Done } from './components/Done';
 import { AddressSearchBox, Map } from "./components/Google";
-
+import { API } from "./API";
 
 export class App extends Component {
   state = {
     userWindowHeight: '100px',
     userWindowWidth: '100px',
-    geoJson: null,
+    roofPolygonGeoJson: null,
     addressObjectOfSearchBox: null,
     currentAddress: "",
     roofArea: '30',
@@ -44,7 +44,13 @@ export class App extends Component {
     }
     const { lat, lng } = addressObject.geometry.location;
     return { lat: lat(), lng: lng() }
-  }
+  };
+
+  mapClickedHandler = async (mapClickEvent) => {
+    const { lat, lng } = mapClickEvent.latLng;
+    const roofPolygonGeoJson = await API.getRoofPolygonGeoJson(lat(), lng());
+    this.setState({ roofPolygonGeoJson });
+  };
 
   componentWillMount() {
     this.setState({
@@ -64,7 +70,11 @@ export class App extends Component {
   withMapBackground = component => (
     <div>
       <div className="map-render-div">
-        <Map centerLatLng={this.getAddressLatLng()}/>
+        <Map
+          centerLatLng={this.getAddressLatLng()}
+          onClick={this.mapClickedHandler}
+          geoJson={this.state.roofPolygonGeoJson}
+        />
       </div>
       {component}
     </div>
