@@ -7,13 +7,13 @@ import React from "react";
 
 import '../../styles/FinancialPlan.css';
 
-export const FinancialPlanInput = props => {
+export const LeftPanel = props => {
   const batteryButtonClass = props.calculationWithBattery ? "battery-selector-active" : "battery-selector";
   const noBatteryButtonClass = !props.calculationWithBattery ? "battery-selector-active" : "battery-selector";
   return (
   <div className="rectangle-11">
     <div className="questions yearly-consumption">
-        Wie hoch ist deine jährlicher Stromverbrauch?
+        Wie hoch ist dein jährlicher Stromverbrauch?
     </div>
     <div className="explanation-1"
          data-tip="Die optimale Größe deiner Photovoltaik Anlage hängt direkt von  <br /> deinem Stromverbrauch ab. Du findest deinen Jahresverbrauch <br /> auf der letzten Rechnung deines Stromanbieters..">

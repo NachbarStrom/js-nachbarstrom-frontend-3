@@ -8,7 +8,7 @@ import '../../styles/App.css';
 import secondStepIcon from "../../images/circle-2-thirds.png";
 import numberTwoIcon from "../../images/number2.png";
 import tickIcon from "../../images/tick.png";
-import { FinancialPlanInput } from "./FinancialPlanInput";
+import { LeftPanel } from "./LeftPanel";
 import { Diagram } from "./Diagram";
 
 export const Financial = props => {
@@ -19,8 +19,8 @@ export const Financial = props => {
       <div className="FINANCIAL-PLAN">Finanz Planer</div>
     </div>);
 
-  const financialPlanInput = (
-    <FinancialPlanInput
+  const leftPanel = (
+    <LeftPanel
       consumption={props.consumption}
       consumptionChange={props.consumptionChange}
       capacity={props.capacity}
@@ -73,7 +73,7 @@ export const Financial = props => {
         <img src={tickIcon} className="oval-2" alt="Tick" />
         <div className="your-financial-est">Dein Solarinvestment auf einen Blick:</div>
 
-        {financialPlanInput}
+        {leftPanel}
 
         <div className="rectangle-12">
           {coloredButtons}

@@ -62,7 +62,7 @@ export const Results = props => {
 
         <div className="great">
           <div className="Great-To-find-out">Großartig!</div>
-          <div className="Great-To-find-out">Um herrauszufinden wieviel Geld du sparts, klicke weiter.
+          <div className="Great-To-find-out">Um herauszufinden wie viel Geld du sparst, klicke weiter.
           </div>
         </div>
 

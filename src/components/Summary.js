@@ -40,7 +40,9 @@ export const Summary = props => {
               Zusammenfassung
           </div>
           <div className="Lorem-ipsum">
-              Auf Basis deiner Angaben und unseren Annahmen findest du hier nochmal alle wichtigen Daten im Überblick. Sobald deine Anfrage genauer von uns geprüft wurde, erhältst du eine finale Kalkulation.
+            Auf Basis deiner Angaben und unseren Annahmen findest du hier
+            nochmal alle wichtigen Daten im Überblick. Sobald deine Anfrage
+            genauer von uns geprüft wurde, erhältst du eine finale Kalkulation.
           </div>
           <div className="System-Size">
             Größe der Anlagem
@@ -102,7 +104,7 @@ export const Summary = props => {
           <div className="second-check">
           <img src={tickIcon} className="checked-approved" alt="tick" />
               <div className="text-grey">Du bist zu </div>
-              <div className="text-blue">80% unabhangig von Stromanbietern</div>
+              <div className="text-blue">80% unabhängig von Stromanbietern</div>
               <div className="text-grey">!  </div>
           </div>
 
@@ -127,7 +129,9 @@ export const Summary = props => {
             <a href="http://www.nachbarstrom.eu"> Allgemeinen Geschäftsbedingungen.</a>
           </div>
           <div className="we-will-find">
-              Unser zertifizierter Installationspartner wird sich mit dir in Kontakt setzten und die genaue Ausführung erarbeiten. Deine Anfrage ist komplett kostenlos und unverbindlich.
+            Unser zertifizierter Installationspartner wird sich mit dir in
+            Kontakt setzten und die genaue Ausführung erarbeiten. Deine
+            Anfrage ist komplett kostenlos und unverbindlich.
           </div>
         </div>
         <Link to='/financial'><button className="back-button">Zurück</button></Link>

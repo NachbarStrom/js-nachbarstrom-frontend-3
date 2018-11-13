@@ -27,7 +27,6 @@ export const Done = () => {
       <div className="Line-6" />
       <div className="next-steps-title-blue">Analyse</div>
       <div className="next-steps-blue">Flächen & Kosten</div>
-      <div className="next-steps-blfantue">Flächen & Kosten</div>
       <div className="next-steps-title-advice">Beratung </div>
       <div className="next-steps-advice">Persönlich & Kompetent</div>
       <div className="next-steps-title-on-site">Vor Ort Termin</div>
@@ -51,7 +50,7 @@ export const Done = () => {
       </div>
       <div className="searching">
           Wir leiten deine Anfrage an unseren Partner weiter. Dieser wird sich in den kommenden Tagen telefonisch
-          bei dir melden um deine Anlage noch besser zu verstehen. Danke für deine Gedult.
+          bei dir melden um deine Anlage noch besser zu verstehen. Danke für deine Geduld.
       </div>
 
       {processTimeline}
