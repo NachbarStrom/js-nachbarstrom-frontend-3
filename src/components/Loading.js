@@ -31,6 +31,7 @@ export const Loading = props => {
           <img src={loadingSun} className="sun five" alt="" />
           <img src={solarPanel} className="solar-panel" alt="" />
         </div>
+        <Link to='/results'><button className="rectangle-button">Results</button></Link>
       </div>
     </div>
   )
