@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/SliderStyle.css';
 import '../../styles/Graphs.css';
 import '../../styles/App.css';
+import { ROUTES } from "../../Routes";
 
 import secondStepIcon from "../../images/circle-2-thirds.png";
 import numberTwoIcon from "../../images/number2.png";
@@ -83,11 +84,11 @@ export const Financial = props => {
           {diagram}
         </div>
 
-        <Link to='/results'>
+        <Link to={ROUTES.RESULTS}>
           <button className="back-button">Zurück</button>
         </Link>
 
-        <Link to='/summary'>
+        <Link to={ROUTES.SUMMARY}>
           <button className="next-button">Weiter</button>
         </Link>
 

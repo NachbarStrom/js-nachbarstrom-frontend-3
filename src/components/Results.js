@@ -10,6 +10,8 @@ import sunIcon from "../images/sun.png";
 import solarPanelIcon from "../images/solar-panel.png";
 import nachbarstromLogo from "../images/nachbarstrom-logo.png";
 
+import { ROUTES } from "../Routes";
+
 export const Results = props => {
   const header = (
     <div className="header">
@@ -66,7 +68,7 @@ export const Results = props => {
           </div>
         </div>
 
-        <Link to='/financial'>
+        <Link to={ROUTES.FINANCIAL}>
           <button className="results-button">Start Finance Calculator</button>
         </Link>
       </div>

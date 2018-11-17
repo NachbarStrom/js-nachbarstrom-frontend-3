@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/App.css';
 import { Link } from 'react-router-dom';
+import { ROUTES } from "../Routes";
 
 import nachbarStromLogo from "../images/nachbarstrom-logo.png";
 
@@ -15,7 +16,7 @@ export const Home = props => {
 
   const goSolarButton = (
     <div className="div-inline">
-      <Link to='/loading'>
+      <Link to={ROUTES.LOADING}>
         <button className="rectangle-button">Go Solar</button>
       </Link>
     </div>

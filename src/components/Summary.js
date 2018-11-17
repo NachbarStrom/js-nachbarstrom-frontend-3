@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { TiBatteryCharge } from 'react-icons/ti';
 import '../styles/Summary.css';
 import '../styles/App.css';
+import { ROUTES } from "../Routes";
 
 import fullCircleIcon from "../images/circle-3-thirds.png";
 import numberThreeIcon from "../images/number3.png";
@@ -134,8 +135,8 @@ export const Summary = props => {
             Anfrage ist komplett kostenlos und unverbindlich.
           </div>
         </div>
-        <Link to='/financial'><button className="back-button">Zurück</button></Link>
-        <Link to='/done'><button className="next-button">Abschicken</button></Link>
+        <Link to={ROUTES.FINANCIAL}><button className="back-button">Zurück</button></Link>
+        <Link to={ROUTES.DONE}><button className="next-button">Abschicken</button></Link>
       </div>
     </div>
   )

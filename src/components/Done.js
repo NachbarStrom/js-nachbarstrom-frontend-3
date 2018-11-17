@@ -36,12 +36,6 @@ export const Done = () => {
     </div>
   );
 
-  const contactButtons = (
-    <div>
-
-    </div>
-  );
-
   return (
     <div className="done-rectangle">
       <div className="awesome">
@@ -62,8 +56,6 @@ export const Done = () => {
           rufe uns an unter <a href={`tel:?${PHONE_NUMBER}`}>{PHONE_NUMBER}</a>
         </div>
       </div>
-
-      {contactButtons}
 
     </div>
   )

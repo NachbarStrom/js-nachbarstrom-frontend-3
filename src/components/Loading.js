@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/App.css';
 import '../styles/Loading.css';
 import { Link } from 'react-router-dom'
+import { ROUTES } from "../Routes";
 
 import firstStep from "../images/circle-1-third.png";
 import loadingSun from "../images/sun-gray.png";
@@ -31,7 +32,7 @@ export const Loading = props => {
           <img src={loadingSun} className="sun five" alt="" />
           <img src={solarPanel} className="solar-panel" alt="" />
         </div>
-        <Link to='/results'><button className="rectangle-button">Results</button></Link>
+        <Link to={ROUTES.RESULTS}><button className="rectangle-button">Results</button></Link>
       </div>
     </div>
   )
