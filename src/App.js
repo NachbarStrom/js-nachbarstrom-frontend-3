@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { Home } from "./components/Home";
 import { Loading } from './components/Loading';
 import { Results } from './components/Results';
@@ -8,7 +8,7 @@ import { Financial } from './components/FinancialPlan/FinancialPlan';
 import { Summary } from './components/Summary';
 import { Done } from './components/Done';
 import { AddressSearchBox, Map } from "./components/Google";
-import { API } from "./API";
+import { backendAPI } from "./BackendAPI";
 import { ROUTES } from "./Routes";
 
 export class App extends Component {
@@ -49,7 +49,7 @@ export class App extends Component {
 
   mapClickedHandler = async (mapClickEvent) => {
     const { lat, lng } = mapClickEvent.latLng;
-    const roofPolygonGeoJson = await API.getRoofPolygonGeoJson(lat(), lng());
+    const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
     this.setState({ roofPolygonGeoJson });
   };
 
@@ -68,22 +68,17 @@ export class App extends Component {
     this.setState({ calculationWithBattery: false });
   };
 
-  getMap = () =>(
-    <div className="map-render-div">
-      <Map
-        centerLatLng={this.getAddressLatLng()}
-        onClick={this.mapClickedHandler}
-        geoJson={this.state.roofPolygonGeoJson}
-      />
-    </div>
-  );
-
-  addressChangedHandler = addressesList => {
+  addressChangedHandler = async addressesList => {
     if (addressesList.length > 0) {
       this.setState({
         addressObjectOfSearchBox: addressesList[0],
         currentAddress: addressesList[0].formatted_address,
       });
+      this.props.history.push(ROUTES.LOADING);
+      const { lat, lng } = addressesList[0].geometry.location;
+      const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
+      this.setState({ roofPolygonGeoJson });
+      this.props.history.push(ROUTES.RESULTS);
     }
   };
 
@@ -118,15 +113,23 @@ export class App extends Component {
     </div>
   );
 
+  getMap = () =>(
+    <div className="map-render-div">
+      <Map
+        centerLatLng={this.getAddressLatLng()}
+        onClick={this.mapClickedHandler}
+        geoJson={this.state.roofPolygonGeoJson}
+      />
+    </div>
+  );
+
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Route exact path={ROUTES.INDEX} render={() =>
-            <Home addressSearchBox={this.getAddressSearchBox()}/>}/>
-          <Route path={ROUTES.EVALUATION} component={this.Evaluation}/>
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <Route exact path={ROUTES.INDEX} render={() =>
+          <Home addressSearchBox={this.getAddressSearchBox()}/>}/>
+        <Route path={ROUTES.EVALUATION} component={this.Evaluation}/>
+      </div>
     );
   }
 }
