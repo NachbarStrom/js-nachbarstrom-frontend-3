@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { Home } from "./components/Home";
 import { Loading } from './components/Loading';
 import { Results } from './components/Results';
@@ -84,6 +84,7 @@ export class App extends Component {
         addressObjectOfSearchBox: addressesList[0],
         currentAddress: addressesList[0].formatted_address,
       });
+      this.props.history.push(ROUTES.LOADING);
     }
   };
 
@@ -120,13 +121,11 @@ export class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Route exact path={ROUTES.INDEX} render={() =>
-            <Home addressSearchBox={this.getAddressSearchBox()}/>}/>
-          <Route path={ROUTES.EVALUATION} component={this.Evaluation}/>
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <Route exact path={ROUTES.INDEX} render={() =>
+          <Home addressSearchBox={this.getAddressSearchBox()}/>}/>
+        <Route path={ROUTES.EVALUATION} component={this.Evaluation}/>
+      </div>
     );
   }
 }
