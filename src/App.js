@@ -12,12 +12,17 @@ import { backendAPI } from "./BackendAPI";
 import { ROUTES } from "./Routes";
 
 export class App extends Component {
+  static DEFAULT_ADDRESS = "";
+  static DEFAULT_LATLNG = { lat: 48.137273, lng: 11.575367 };
+
   state = {
     userWindowHeight: '100px',
     userWindowWidth: '100px',
     roofPolygonGeoJson: null,
-    addressObjectOfSearchBox: null,
-    currentAddress: "",
+
+    mapCenterLatLng: App.DEFAULT_LATLNG,
+    houseAddress: App.DEFAULT_ADDRESS,
+
     roofArea: '30',
     panels: '30',
     capacity: '5',
@@ -33,24 +38,15 @@ export class App extends Component {
     energyIndependencePercentage: 90,
   };
 
-  DEFAULT_LOCATION = {
-    lat: 48.18386,
-    lng: 11.6111
-  };
 
-  getAddressLatLng() {
-    const addressObject = this.state.addressObjectOfSearchBox;
-    if (!addressObject) {
-      return this.DEFAULT_LOCATION;
-    }
-    const { lat, lng } = addressObject.geometry.location;
-    return { lat: lat(), lng: lng() }
-  };
-
-  mapClickedHandler = async (mapClickEvent) => {
+  mapClickedHandler = async mapClickEvent => {
     const { lat, lng } = mapClickEvent.latLng;
     const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
-    this.setState({ roofPolygonGeoJson });
+    this.setState({
+      roofPolygonGeoJson,
+      mapCenterLatLng: null,
+      houseAddress: `lat: ${lat().toFixed(4)}, lng: ${lng().toFixed(4)}`,
+    });
   };
 
   componentWillMount() {
@@ -69,29 +65,35 @@ export class App extends Component {
   };
 
   addressChangedHandler = async addressesList => {
-    if (addressesList.length > 0) {
-      this.setState({
-        addressObjectOfSearchBox: addressesList[0],
-        currentAddress: addressesList[0].formatted_address,
-      });
-      this.props.history.push(ROUTES.LOADING);
-      const { lat, lng } = addressesList[0].geometry.location;
-      const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
-      this.setState({ roofPolygonGeoJson });
-      this.props.history.push(ROUTES.RESULTS);
+    if (addressesList.length <= 0) {
+      return;
     }
+    this.setState({
+      houseAddress: addressesList[0].formatted_address,
+      mapCenterLatLng: this.getAddressLatLngFrom(addressesList[0]),
+    });
+    this.props.history.push(ROUTES.LOADING);
+    const { lat, lng } = addressesList[0].geometry.location;
+    const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
+    this.setState({ roofPolygonGeoJson });
+    this.props.history.push(ROUTES.RESULTS);
+  };
+
+  getAddressLatLngFrom = addressObject => {
+    const { lat, lng } = addressObject.geometry.location;
+    return { lat: lat(), lng: lng() }
   };
 
   getAddressSearchBox = () => (
     <AddressSearchBox
-      currentAddress={this.state.currentAddress}
+      currentAddress={this.state.houseAddress}
       addressChangedHandler={this.addressChangedHandler}
     />
   );
 
-  getResultsPage = () => (
+  ResultsPage = props => (
       <Results
-        addressSearchBox={this.getAddressSearchBox()}
+        addressSearchBox={props.addressSearchBox}
         address={this.state.address}
         capacity={this.state.capacity}
         electricity={this.state.electricity}
@@ -102,11 +104,11 @@ export class App extends Component {
       />
   );
 
-  Evaluation = () => (
+  Evaluation = props => (
     <div>
       {this.getMap()}
-      <Route path={ROUTES.LOADING} render={() => <Loading addressSearchBox={this.getAddressSearchBox()}/>}/>
-      <Route path={ROUTES.RESULTS} render={this.getResultsPage}/>
+      <Route path={ROUTES.LOADING} render={() => <Loading addressSearchBox={props.addressSearchBox}/>}/>
+      <Route path={ROUTES.RESULTS} render={() => <this.ResultsPage addressSearchBox={props.addressSearchBox}/>}/>
       <Route path={ROUTES.FINANCIAL} render={() => <Financial calculationWithBattery={this.state.calculationWithBattery} data={this.state.data} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />}/>
       <Route path={ROUTES.SUMMARY} render={() => (<Summary address={this.state.address} panels={this.state.panels} batteryPower={this.state.batteryPower} energyIndependencePercentage={this.state.energyIndependencePercentage}/>)} />
       <Route path={ROUTES.DONE} component={Done} />
@@ -116,7 +118,7 @@ export class App extends Component {
   getMap = () =>(
     <div className="map-render-div">
       <Map
-        centerLatLng={this.getAddressLatLng()}
+        centerLatLng={this.state.mapCenterLatLng}
         onClick={this.mapClickedHandler}
         geoJson={this.state.roofPolygonGeoJson}
       />
@@ -124,11 +126,11 @@ export class App extends Component {
   );
 
   render() {
+    const addressSearchBox = this.getAddressSearchBox();
     return (
       <div className="App">
-        <Route exact path={ROUTES.INDEX} render={() =>
-          <Home addressSearchBox={this.getAddressSearchBox()}/>}/>
-        <Route path={ROUTES.EVALUATION} component={this.Evaluation}/>
+        <Route exact path={ROUTES.INDEX} render={() =><Home addressSearchBox={addressSearchBox}/>}/>
+        <Route path={ROUTES.EVALUATION} render={() => <this.Evaluation addressSearchBox={addressSearchBox}/>}/>
       </div>
     );
   }
