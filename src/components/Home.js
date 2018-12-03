@@ -10,7 +10,7 @@ export const Home = props => {
   const leftText = (
     <div className="starting-wondering">
       <p>We love to share progress! </p>
-      <p className="title-p"> This is a Alpha to demonstrate how thing will look like. Things might be buggy and not work for your set up, and values displayed may not reflect reality.</p>
+      <p className="title-p"> But Keep In Mind: this is a Alpha to demonstrate how thing will look like. Things might be buggy and not work for your set up, and values displayed may not reflect reality.</p>
       <p className="title-p"> We value your feedback! Drop us a mail with your thoughts, complains, ideas, and critics. </p>
     </div>
   );
