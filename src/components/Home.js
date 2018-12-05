@@ -9,8 +9,9 @@ export const Home = props => {
 
   const leftText = (
     <div className="starting-wondering">
-      <p>Lohnt sich Photovoltaik für mich? Ist mein Dach überhaupt geeignet?</p>
-      <p className="title-p">Wir sagen es dir. Mit nur einem Klick!</p>
+      <p>We love to share progress! </p>
+      <p className="title-p"> But Keep In Mind: this is a Alpha to demonstrate how thing will look like. Things might be buggy and not work for your set up, and values displayed may not reflect reality.</p>
+      <p className="title-p"> We value your feedback! Drop us a mail with your thoughts, complains, ideas, and critics. </p>
     </div>
   );
 
