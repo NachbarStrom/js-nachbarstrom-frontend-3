@@ -12,16 +12,32 @@ export const GeoJsonPolygon = props => (
 );
 
 const getPolygonFromGeoJson = geoJson => {
-  if (isInvalidGeoJson(geoJson)) return EMPTY_POLYGON;
-  return geoJson.features[0].geometry.coordinates.map(
-    coord => coord.slice(0, -1).map(
-      latLngPair => ({ lat: latLngPair[1], lng: latLngPair[0] })
-    )
-  );
+  if (hasGeometricalFeatures(geoJson)) {
+    console.log("from geometrical features");
+    return parseGeometricalFeatures(geoJson)
+  }
+  if (hasCoordinates(geoJson)) {
+    console.log("from coordinates");
+    return parseCoordinates(geoJson)
+  }
+  console.log("empty polyogn");
+  return EMPTY_POLYGON
 };
 
-const isInvalidGeoJson = geoJson => {
-  return !geoJson || !geoJson.features[0];
-};
+const hasGeometricalFeatures = geoJson => (
+  geoJson && geoJson.features && geoJson.features[0]
+);
+
+const parseGeometricalFeatures = geoJson => (
+  geoJson.features[0].geometry.coordinates.map(
+    coord => coord.slice(0, -1).map(parseLatLngPair)
+  )
+);
+
+const parseLatLngPair = latLngPair => ({ lat: latLngPair[1], lng: latLngPair[0] });
+
+const hasCoordinates = geoJson => geoJson && geoJson.coordinates;
+
+const parseCoordinates = geoJson => geoJson.coordinates[0].map(parseLatLngPair);
 
 const EMPTY_POLYGON = [];

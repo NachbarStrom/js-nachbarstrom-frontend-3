@@ -41,11 +41,13 @@ export class App extends Component {
 
   mapClickedHandler = async mapClickEvent => {
     const { lat, lng } = mapClickEvent.latLng;
-    const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
+    const { address, geoJson } = await backendAPI.getReverseGeocoding(lat(), lng());
+    const roofPolygonGeoJson = geoJson.type === "Polygon" ? geoJson :
+      await backendAPI.getRoofPolygonGeoJson(lat(), lng());
     this.setState({
       roofPolygonGeoJson,
       mapCenterLatLng: null,
-      houseAddress: `lat: ${lat().toFixed(4)}, lng: ${lng().toFixed(4)}`,
+      houseAddress: address,
     });
   };
 
