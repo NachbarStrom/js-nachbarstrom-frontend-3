@@ -9,33 +9,16 @@ import { ROUTES } from "../../Routes";
 import secondStepIcon from "../../images/circle-2-thirds.png";
 import numberTwoIcon from "../../images/number2.png";
 import tickIcon from "../../images/tick.png";
-import { LeftPanel } from "./LeftPanel";
 import { Diagram } from "./Diagram";
 
-export const Financial = props => {
+export const FinancialPlan = props => {
+
   const header = (
     <div>
       <img src={secondStepIcon} className="Group-9" alt="Second step icon"/>
       <img src={numberTwoIcon} className="number-two" alt="Number two icon"/>
       <div className="FINANCIAL-PLAN">Finanz Planer</div>
     </div>);
-
-  const leftPanel = (
-    <LeftPanel
-      consumption={props.consumption}
-      consumptionChange={props.consumptionChange}
-      capacity={props.capacity}
-      panels={props.panels}
-      capacityChange={props.capacityChange}
-      btnClass={props.btnClass}
-      noBtnClass={props.noBtnClass}
-      noBatteryActivationHandler={props.noBatteryActivationHandler}
-      batteryActivationHandler={props.batteryActivationHandler}
-      calculationWithBattery={props.calculationWithBattery}
-    />
-  );
-
-  const diagram = <Diagram />;
 
   const coloredButtons = (
     <div>
@@ -74,14 +57,14 @@ export const Financial = props => {
         <img src={tickIcon} className="oval-2" alt="Tick" />
         <div className="your-financial-est">Dein Solarinvestment auf einen Blick:</div>
 
-        {leftPanel}
+        {props.children}
 
         <div className="rectangle-12">
           {coloredButtons}
           <div className="blue-line"/>
           <div className="blue-subtitle">Autarkielevel</div>
           <div className="chart-separator"/>
-          {diagram}
+          <Diagram />
         </div>
 
         <Link to={ROUTES.RESULTS}>

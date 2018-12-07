@@ -4,12 +4,14 @@ import { Route } from 'react-router-dom';
 import { Home } from "./components/Home";
 import { Loading } from './components/Loading';
 import { Results } from './components/Results';
-import { Financial } from './components/FinancialPlan/FinancialPlan';
+import { FinancialPlan } from './components/FinancialPlan/FinancialPlan';
 import { Summary } from './components/Summary';
 import { Done } from './components/Done';
 import { AddressSearchBox, Map } from "./components/Google";
 import { backendAPI } from "./BackendAPI";
 import { ROUTES } from "./Routes";
+import { FinancialCalculator } from "./components/FinancialCalculator";
+import { FinancialPlanLeftPanel } from "./components/FinancialPlan/FinancialPlanLeftPanel";
 
 export class App extends Component {
   static DEFAULT_ADDRESS = "";
@@ -23,9 +25,10 @@ export class App extends Component {
     mapCenterLatLng: App.DEFAULT_LATLNG,
     houseAddress: App.DEFAULT_ADDRESS,
 
-    roofArea: '30',
-    panels: '30',
-    capacity: '5',
+    roofArea: 30,
+    yearlyEnergyConsumption: 2000,
+    desiredInstallationCapacity: FinancialCalculator.getCapacity(30),
+
     electricity: '2500',
     consumption: '3500',
     batteryPower: '6',
@@ -34,7 +37,7 @@ export class App extends Component {
     lastName: '',
     phone: '',
     email: '',
-    calculationWithBattery: true,
+    isCalculationWithBattery: true,
     energyIndependencePercentage: 90,
   };
 
@@ -58,12 +61,12 @@ export class App extends Component {
     });
   };
 
-  batteryButtonHandler = () => {
-    this.setState({ calculationWithBattery: true });
+  handleButton_batteryDesired = () => {
+    this.setState({ isCalculationWithBattery: true });
   };
 
-  noBatteryButtonHandler = () => {
-    this.setState({ calculationWithBattery: false });
+  handleButton_noBatteryDesired = () => {
+    this.setState({ isCalculationWithBattery: false });
   };
 
   addressChangedHandler = async addressesList => {
@@ -97,12 +100,10 @@ export class App extends Component {
       <Results
         addressSearchBox={props.addressSearchBox}
         address={this.state.address}
-        capacity={this.state.capacity}
         electricity={this.state.electricity}
         userWindowHeight={this.state.userWindowHeight}
         userWindowWidth={this.state.userWindowWidth}
         roofArea={this.state.roofArea}
-        panels={this.state.panels}
       />
   );
 
@@ -111,11 +112,46 @@ export class App extends Component {
       {this.getMap()}
       <Route path={ROUTES.LOADING} render={() => <Loading addressSearchBox={props.addressSearchBox}/>}/>
       <Route path={ROUTES.RESULTS} render={() => <this.ResultsPage addressSearchBox={props.addressSearchBox}/>}/>
-      <Route path={ROUTES.FINANCIAL} render={() => <Financial calculationWithBattery={this.state.calculationWithBattery} data={this.state.data} batteryActivationHandler={this.batteryButtonHandler} noBatteryActivationHandler={this.noBatteryButtonHandler} consumption={this.state.consumption} consumptionChange={consumption => this.setState({ consumption })} capacity={this.state.capacity} panels={this.state.panels} capacityChange={capacity => this.setState({ capacity })} panelsChange={capacity => this.setState({ capacity })} />}/>
-      <Route path={ROUTES.SUMMARY} render={() => (<Summary address={this.state.address} panels={this.state.panels} batteryPower={this.state.batteryPower} energyIndependencePercentage={this.state.energyIndependencePercentage}/>)} />
+      <Route path={ROUTES.FINANCIAL} render={() => (this.getFinancial())}/>
+      <Route path={ROUTES.SUMMARY} render={() => this.getSummary()} />
       <Route path={ROUTES.DONE} component={Done} />
     </div>
   );
+
+  getSummary() {
+    return (
+      <Summary
+        address={this.state.address}
+        panels={FinancialCalculator.getNumPanels(this.state.roofArea)}
+        batteryPower={this.state.batteryPower}
+        energyIndependencePercentage={this.state.energyIndependencePercentage}
+      />
+    );
+  }
+
+  getFinancial() {
+    return (
+      <FinancialPlan>
+        <FinancialPlanLeftPanel
+          desiredInstallationCapacity={this.state.desiredInstallationCapacity}
+          handleChangeInSlider_DesiredInstallationCapacity={this.handleChangeInSlider_DesiredInstallationCapacity}
+          handleChangeInSlider_YearlyEnergyConsumption={this.handleChangeInSlider_YearlyEnergyConsumption}
+          yearlyEnergyConsumption={this.state.yearlyEnergyConsumption}
+          handleButton_noBatteryDesired={this.handleButton_noBatteryDesired}
+          handleButton_batteryDesired={this.handleButton_batteryDesired}
+          isCalculationWithBattery={this.state.isCalculationWithBattery}
+        />
+      </FinancialPlan>
+    );
+  }
+
+  handleChangeInSlider_DesiredInstallationCapacity = newDesiredInstallationCapacity => {
+    this.setState({ desiredInstallationCapacity: Number(newDesiredInstallationCapacity) });
+  };
+
+  handleChangeInSlider_YearlyEnergyConsumption = newYearlyConsumption => {
+    this.setState({ yearlyEnergyConsumption: Number(newYearlyConsumption) })
+  };
 
   getMap = () =>(
     <div className="map-render-div">

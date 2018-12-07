@@ -1,15 +1,16 @@
 import { FaQuestionCircle } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
 import InputRange from "react-input-range";
-import { SliderCapacity } from "./SliderCapacity";
+import { DesiredInstallationCapacitySlider } from "./DesiredInstallationCapacitySlider";
 import { TiBatteryCharge } from "react-icons/ti";
 import React from "react";
 
 import '../../styles/FinancialPlan.css';
 
-export const LeftPanel = props => {
-  const batteryButtonClass = props.calculationWithBattery ? "battery-selector-active" : "battery-selector";
-  const noBatteryButtonClass = !props.calculationWithBattery ? "battery-selector-active" : "battery-selector";
+export const FinancialPlanLeftPanel = props => {
+  const batteryButtonClass = props.isCalculationWithBattery ? "battery-selector-active" : "battery-selector";
+  const noBatteryButtonClass = !props.isCalculationWithBattery ? "battery-selector-active" : "battery-selector";
+
   return (
   <div className="rectangle-11">
     <div className="questions yearly-consumption">
@@ -25,28 +26,15 @@ export const LeftPanel = props => {
       <InputRange
         maxValue={8000}
         minValue={1000}
-        value={props.consumption}
-        onChange={props.consumptionChange}
+        value={props.yearlyEnergyConsumption}
+        onChange={props.handleChangeInSlider_YearlyEnergyConsumption}
       />
     </div>
 
-    <div className="questions panel-systems">
-        Bestimme die Leistung deiner Photovoltaik Anlage?
-    </div>
-
-    <div className="explanation-2"
-         data-tip="Wir haben die optimale Größe deiner Solaranlage day and save unused <br />
-         electricity to consume it at night bereits errechnet. Trotzdem kannst  <br />
-         du hier verschiedene Konfigurationen mit dem Finaz Planer testen.">
-      <FaQuestionCircle size={16} color="#757575"/>
-    </div>
-    <div className="sliders-2">
-      <SliderCapacity
-        capacity={props.capacity}
-        panels={props.panels}
-        capacityChange={props.capacityChange}
-      />
-    </div>
+    <DesiredInstallationCapacitySlider
+      desiredInstallationCapacity={props.desiredInstallationCapacity}
+      onChange={props.handleChangeInSlider_DesiredInstallationCapacity}
+    />
 
     <div className="questions battery">
         Möchtest du zusätzliche einen Stromspeicher installieren?
@@ -60,14 +48,15 @@ export const LeftPanel = props => {
 
     <div className="with-battery">
       <div className={batteryButtonClass}
-           onClick={props.batteryActivationHandler}>
+           onClick={props.handleButton_batteryDesired}>
         <div><TiBatteryCharge size={60}/></div>
           Mit Speicher
       </div>
     </div>
+
     <div className="no-battery">
       <div className={noBatteryButtonClass}
-           onClick={props.noBatteryActivationHandler}>
+           onClick={props.handleButton_noBatteryDesired}>
         <div><TiBatteryCharge size={60}/></div>
           Ohne Speicher
       </div>

@@ -11,6 +11,7 @@ import solarPanelIcon from "../images/solar-panel.png";
 import nachbarstromLogo from "../images/nachbarstrom-logo.png";
 
 import { ROUTES } from "../Routes";
+import { FinancialCalculator } from "./FinancialCalculator";
 
 export const Results = props => {
   const header = (
@@ -18,6 +19,9 @@ export const Results = props => {
       <img src={stepOneIcon} className="Group-9" alt="Step 1" />
       <div className="AI-SOLAR-CALCULATION">AUTOMATISCHE BERECHNUNG</div>
     </div>);
+
+  const numOfPanels = FinancialCalculator.getNumPanels(props.roofArea);
+  const capacity = FinancialCalculator.getCapacity(props.roofArea);
 
   return (
     <div>
@@ -42,8 +46,8 @@ export const Results = props => {
               <div className="group-5">
                 <div className="sqm text-style-1">{props.roofArea}</div>
                 <div className="sqm text-style"> sqm</div>
-                <div className="small-info">= {props.panels} solar panels</div>
-                <div className="small-info">= {props.capacity} kWp</div>
+                <div className="small-info">= {numOfPanels} solar panels</div>
+                <div className="small-info">= {capacity} kWp</div>
               </div>
             </div>
             <div className="edit-roof-area">Nutzbare Dachfläche</div>
