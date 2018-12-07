@@ -12,10 +12,14 @@ import { backendAPI } from "./BackendAPI";
 import { ROUTES } from "./Routes";
 import { FinancialCalculator } from "./components/FinancialCalculator";
 import { FinancialPlanLeftPanel } from "./components/FinancialPlan/FinancialPlanLeftPanel";
+import geojsonArea from "@mapbox/geojson-area";
+
+const MARIENPLATZ = { lat: 48.137273, lng: 11.575367 };
 
 export class App extends Component {
   static DEFAULT_ADDRESS = "";
-  static DEFAULT_LATLNG = { lat: 48.137273, lng: 11.575367 };
+  static DEFAULT_LATLNG = MARIENPLATZ;
+  static DEFAULT_ROOF_AREA = 0;
 
   state = {
     userWindowHeight: '100px',
@@ -25,9 +29,9 @@ export class App extends Component {
     mapCenterLatLng: App.DEFAULT_LATLNG,
     houseAddress: App.DEFAULT_ADDRESS,
 
-    roofArea: 30,
+    roofArea: App.DEFAULT_ROOF_AREA,
     yearlyEnergyConsumption: 2000,
-    desiredInstallationCapacity: FinancialCalculator.getCapacity(30),
+    desiredInstallationCapacity: FinancialCalculator.getCapacity(App.DEFAULT_ROOF_AREA),
 
     electricity: '2500',
     consumption: '3500',
@@ -45,9 +49,21 @@ export class App extends Component {
   mapClickedHandler = async mapClickEvent => {
     const { lat, lng } = mapClickEvent.latLng;
     const { address, geoJson } = await backendAPI.getReverseGeocoding(lat(), lng());
-    const roofPolygonGeoJson = geoJson.type === "Polygon" ? geoJson :
-      await backendAPI.getRoofPolygonGeoJson(lat(), lng());
+
+    let roofPolygonGeoJson;
+    let roofArea;
+
+    if (geoJson.type === "Polygon") {
+      roofPolygonGeoJson = geoJson;
+      roofArea = geojsonArea.geometry(geoJson);
+    } else {
+      const { geoJson, areas } = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
+      roofArea = areas.length > 0 ? areas[0].area : App.DEFAULT_ROOF_AREA;
+      roofPolygonGeoJson = geoJson;
+    }
+
     this.setState({
+      roofArea: Math.round(roofArea*10) / 10,
       roofPolygonGeoJson,
       mapCenterLatLng: null,
       houseAddress: address,
@@ -79,8 +95,12 @@ export class App extends Component {
     });
     this.props.history.push(ROUTES.LOADING);
     const { lat, lng } = addressesList[0].geometry.location;
-    const roofPolygonGeoJson = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
-    this.setState({ roofPolygonGeoJson });
+    const { geoJson, areas } = await backendAPI.getRoofPolygonGeoJson(lat(), lng());
+    const roofArea = areas.length > 0 ? areas[0].area : App.DEFAULT_ROOF_AREA;
+    this.setState({
+      roofPolygonGeoJson: geoJson,
+      roofArea: Math.round(roofArea*10) / 10
+    });
     this.props.history.push(ROUTES.RESULTS);
   };
 
