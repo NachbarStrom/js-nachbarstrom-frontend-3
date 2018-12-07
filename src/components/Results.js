@@ -60,7 +60,7 @@ export const Results = props => {
             </div>
             <img src={sunIcon} className="sun-results" alt="Sun" />
             <div className="sqm-right">
-              <div className="sqm text-style-1">{props.electricity}</div>
+              <div className="sqm text-style-1">{props.potentialYearlyKWhProduction}</div>
               <div className="sqm text-style"> kWh/p.a.</div>
             </div>
           </div>

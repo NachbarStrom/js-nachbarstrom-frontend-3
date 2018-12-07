@@ -20,16 +20,24 @@ export class App extends Component {
   static DEFAULT_ADDRESS = "";
   static DEFAULT_LATLNG = MARIENPLATZ;
   static DEFAULT_ROOF_AREA = 0;
+  static DEFAULT_POTENTIAL_YEARLY_KWH_PRODUCTION = 0;
+  static DEFAULT_ROOF_POLYGON_GEOJSON = null;
+
+  static DEFAULT_STATE = {
+    roofPolygonGeoJson: App.DEFAULT_ROOF_POLYGON_GEOJSON,
+    roofArea: App.DEFAULT_ROOF_AREA,
+    potentialYearlyKWhProduction: App.DEFAULT_POTENTIAL_YEARLY_KWH_PRODUCTION,
+    houseAddress: App.DEFAULT_ADDRESS,
+  };
 
   state = {
+    ...App.DEFAULT_STATE,
+
     userWindowHeight: '100px',
     userWindowWidth: '100px',
-    roofPolygonGeoJson: null,
 
     mapCenterLatLng: App.DEFAULT_LATLNG,
-    houseAddress: App.DEFAULT_ADDRESS,
 
-    roofArea: App.DEFAULT_ROOF_AREA,
     yearlyEnergyConsumption: 2000,
     desiredInstallationCapacity: FinancialCalculator.getCapacity(App.DEFAULT_ROOF_AREA),
 
@@ -45,8 +53,16 @@ export class App extends Component {
     energyIndependencePercentage: 90,
   };
 
+  updatePotentialYearlyKWhProduction = async (lat, lng) => {
+    const potentialYearlyKWhProduction =
+      Number(await backendAPI.getYearlyKWhProduction(lat, lng, this.state.roofArea));
+    this.setState({ potentialYearlyKWhProduction });
+  };
+
+  putResultsOnLoading = () => this.setState(App.DEFAULT_STATE);
 
   mapClickedHandler = async mapClickEvent => {
+    this.putResultsOnLoading();
     const { lat, lng } = mapClickEvent.latLng;
     const { address, geoJson } = await backendAPI.getReverseGeocoding(lat(), lng());
 
@@ -68,6 +84,8 @@ export class App extends Component {
       mapCenterLatLng: null,
       houseAddress: address,
     });
+
+    await this.updatePotentialYearlyKWhProduction(lat(), lng());
   };
 
   componentWillMount() {
@@ -102,6 +120,7 @@ export class App extends Component {
       roofArea: Math.round(roofArea*10) / 10
     });
     this.props.history.push(ROUTES.RESULTS);
+    await this.updatePotentialYearlyKWhProduction(lat(), lng());
   };
 
   getAddressLatLngFrom = addressObject => {
@@ -120,9 +139,7 @@ export class App extends Component {
       <Results
         addressSearchBox={props.addressSearchBox}
         address={this.state.address}
-        electricity={this.state.electricity}
-        userWindowHeight={this.state.userWindowHeight}
-        userWindowWidth={this.state.userWindowWidth}
+        potentialYearlyKWhProduction={this.state.potentialYearlyKWhProduction}
         roofArea={this.state.roofArea}
       />
   );
