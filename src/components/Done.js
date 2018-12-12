@@ -2,14 +2,14 @@ import React from "react";
 import '../styles/FinancialPlan.css';
 import '../styles/Thanks.css';
 import '../styles/App.css';
+import '../styles/Done.css';
 
 import tickIcon from "../images/tick.png";
 import phoneIcon from "../images/done/phone-advice.png";
 import expertIcon from "../images/done/expert.png";
 import truckIcon from "../images/done/truck.png";
-
-const EMAIL_ADDRESS = "info@nachbarstrom.eu";
-const PHONE_NUMBER = "+49 151 2347 3011";
+import {Row,Col} from "antd";
+import {Button} from "antd";
 
 export const Done = () => {
 
@@ -36,6 +36,7 @@ export const Done = () => {
     </div>
   );
 
+  const buttonStyle = { backgroundColor:"#6770ff", borderColor:"#6770ff" };
   return (
     <div className="done-rectangle">
       <div className="awesome">
@@ -48,15 +49,24 @@ export const Done = () => {
       </div>
 
       {processTimeline}
-
-      <div className="more-questions">
-        <div className="more-questions-grey">Du hast noch Fragen? Wir freuen uns auf deine Fragen!</div>
-        <div className="more-questions-grey">
-          Sende uns eine Email an <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a> oder
-          rufe uns an unter <a href={`tel:?${PHONE_NUMBER}`}>{PHONE_NUMBER}</a>
-        </div>
-      </div>
-
+      <Row style={{ paddingTop: '40px', textAlign: 'left'}}>
+        <Col span={6} offset={4}>
+          <div>
+            <div className="more-questions-grey">Hast du noch Fragen?</div>
+              <div className="more-questions-blue">Wir helfen dir gerne weiter</div>
+          </div>
+        </Col>
+        <Col span={4}>
+          <Button style={buttonStyle} type="primary" icon="solution" size={"large"}>
+            <a style={{color:'white'}} href={"https://www.nachbarstrom.eu/price"} target={"_blank"}> Request Product</a>
+          </Button>
+        </Col>
+        <Col span={4} offset={1}>
+          <Button style={buttonStyle} type="primary" icon="mail" size={"large"}>
+            <a style={{color: "#FFF"}} href={"https://www.nachbarstrom.eu"} target={"_blank"}>  I have Other Question</a>
+          </Button>
+        </Col>
+      </Row>
     </div>
   )
 };
